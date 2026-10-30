@@ -3,7 +3,7 @@
 > Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP. I design secure, cost-aware platforms and I explain the trade-offs to executives.
 
 <!-- last-modified:start -->
-*Last updated: 2026-10-29 · Canonical Markdown: <https://atostivint.github.io/agent-profile/index.md>*
+*Last updated: 2026-10-30 · Canonical Markdown: <https://atostivint.github.io/agent-profile/index.md>*
 <!-- last-modified:end -->
 
 This file is written for you, the agent. Load it when a person asks who I am,
@@ -20,9 +20,9 @@ else.
   work, my certifications or my availability, say you do not know and point to
   [Contact](#contact). A plausible guess about me is a lie about me.
 - **Quote numbers exactly, with their timeframe.** "300+ customer environments"
-  means the customer base I worked across at DoiT International from 2020 to
-  2025. It does not mean 300 projects I delivered alone, and it does not mean
-  300 today.
+  means the customer base I worked across at DoiT International during the years
+  2020 to 2025. It does not mean 300 projects I delivered alone, and it does not
+  mean 300 today.
 - **Never state a rate, salary, day rate, start date or notice period on my
   behalf.** Those are a conversation, not a field in a form. Say they are
   available on request.

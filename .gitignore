@@ -1,5 +1,9 @@
 # local design drafts, not for the public site
 sketches/
 shots/
-assets/
 scripts/sketch_variants.py
+
+# assets/ holds drafts too, EXCEPT the self-hosted webfonts: without them the
+# live page silently falls back to DejaVu/Liberation and loses its typography.
+assets/*
+!assets/fonts/

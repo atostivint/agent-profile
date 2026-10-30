@@ -6,7 +6,11 @@ Steps:
      (falls back to today when the repo has no history yet);
   2. regenerate llms.txt and AGENTS.md as byte-identical copies of index.md,
      so an agent that looks for either convention gets the same facts;
-  3. render index.html from index.md (no client-side JS, no CDN dependency).
+  3. render index.html from index.md — no CDN, fonts self-hosted in
+     assets/fonts, one inline scroll-spy script.
+
+The page follows the operating-system colour scheme: dark by default, light
+when the system asks for it. Both palettes come from the same CSS variables.
 
 Usage: python3 scripts/build.py [--date YYYY-MM-DD]
 """
@@ -30,6 +34,230 @@ CANONICAL = f"{SITE_URL}/index.md"
 STAMP_RE = re.compile(
     r"(<!-- last-modified:start -->\n)(.*?)(\n<!-- last-modified:end -->)", re.S
 )
+
+PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Alexandre Tostivint — Senior Cloud Architect</title>
+<meta name="description" content="Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP." />
+<link rel="canonical" href="__SITE_URL__/" />
+<link rel="alternate" type="text/markdown" href="/index.md" title="Agent-readable profile" />
+<link rel="alternate" type="application/pdf" href="https://cv.alexandre.tostivint.bzh/resume.pdf" title="CV" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<style>
+  /* ---- palettes ---------------------------------------------------------
+     Dark is the operator view (hard-edged, green prompt, amber headings).
+     Light borrows the greys and the blue accent of the spec-sheet sketch on
+     plain white, so it reads like a technical document rather than a
+     washed-out terminal. Both are driven by the same variables.            */
+  :root {
+    --bg:#0a0c0f; --rail:#0d1117; --panel:#11151a; --chrome:#0e1216;
+    --line:#232a33; --ink:#d6dee7; --head:#ffffff; --dim:#8f98a4;
+    --accent:#79c0ff; --prompt:#7ee787; --subhead:#f0b429; --mark:#7d8794;
+    --quote:#0d1216; --code:#161c22; --shadow:0 24px 60px rgba(0,0,0,.45);
+    --rule-dot:#1c232b; --tint:rgba(214,222,231,.07);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:#ffffff; --rail:#f7f8fa; --panel:#ffffff; --chrome:#f3f5f8;
+      --line:#e6e8eb; --ink:#333a43; --head:#14181d; --dim:#5b6470;
+      --accent:#1f4fd8; --prompt:#0f7b3f; --subhead:#334155; --mark:#7b8492;
+      --quote:#f8f9fb; --code:#f3f5f8; --shadow:0 18px 44px rgba(15,23,42,.08);
+      --rule-dot:#e6e8eb; --tint:rgba(20,24,29,.07);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 15.5px/1.68 "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: -.004em;
+  }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--dim); }
+  a:hover { border-bottom-style: solid; border-bottom-color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  /* ---- shell: rail + terminal window ----------------------------------- */
+  .shell { display: grid; grid-template-columns: 16.5rem minmax(0, 1fr); max-width: 84rem; margin: 0 auto; }
+
+  .rail {
+    position: sticky; top: 0; align-self: start; height: 100vh;
+    display: flex; flex-direction: column;
+    background: var(--rail); border-right: 1px solid var(--line);
+    padding: 24px 16px 18px;
+  }
+  .rail .nm { font-weight: 600; font-size: 13.5px; color: var(--head); }
+  .rail .rl { font-size: 10.5px; text-transform: uppercase; letter-spacing: .13em; color: var(--dim); margin-top: 4px; }
+  .rail .id { padding: 0 8px; margin-bottom: 22px; }
+  .rail nav { display: flex; flex-direction: column; overflow: auto; }
+  .rail nav a {
+    color: var(--dim); font-size: 13px; line-height: 1.4; padding: 6px 8px 6px 12px;
+    border: 0; border-left: 2px solid transparent;
+  }
+  .rail nav a:hover { color: var(--ink); background: var(--tint); }
+  .rail nav a.active { color: var(--head); border-left-color: var(--prompt); background: var(--tint); font-weight: 600; }
+  .rail .util { border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }
+  .rail .util a { display: flex; justify-content: space-between; gap: 10px; color: var(--ink); font-size: 12.5px; padding: 5px 8px; border: 0; }
+  .rail .util a em { color: var(--dim); font-style: normal; }
+  .rail .util a:hover { color: var(--accent); }
+  .rail .mdlink { margin-top: 10px; padding: 0 8px; font-size: 10.5px; color: var(--dim); }
+  .rail .mdlink a { border: 0; }
+
+  main { min-width: 0; padding: 0 26px; }
+  .win {
+    max-width: 47rem; margin: 26px auto 40px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden; box-shadow: var(--shadow);
+  }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 11px 14px; background: var(--chrome); border-bottom: 1px solid var(--line); }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
+  .bar .title { margin-left: 10px; color: var(--dim); font-size: 12px; letter-spacing: .01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .win .body { padding: 30px 34px 34px; }
+  .win .body > :first-child { margin-top: 0; }
+
+  /* ---- document -------------------------------------------------------- */
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; color: var(--head); letter-spacing: -.015em; }
+  h1::before { content: "\\276F whois "; color: var(--prompt); font-weight: 400; }
+  h2 {
+    font-size: .88rem; text-transform: uppercase; letter-spacing: .1em; color: var(--subhead);
+    margin: 2.4rem 0 .7rem; padding-bottom: .45rem; border-bottom: 1px solid var(--line);
+    scroll-margin-top: 18px;
+  }
+  h2::before { content: "## "; color: var(--mark); }
+  h3 { font-size: .95rem; margin: 1.6rem 0 .4rem; color: var(--accent); }
+  h3::before { content: "\\2192 "; color: var(--dim); }
+  p { margin: 0 0 1rem; }
+  ul { padding-left: 1.1rem; margin: 0 0 1rem; }
+  li { margin: .3rem 0; }
+  li::marker { color: var(--dim); }
+  strong { color: var(--head); }
+  code { background: var(--code); padding: .1em .35em; border-radius: 3px; color: var(--subhead); }
+  blockquote { margin: 0 0 1.4rem; padding: 10px 14px; background: var(--quote); border-left: 2px solid var(--prompt); }
+  blockquote p { margin: 0; color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
+  th {
+    text-align: left; color: var(--dim); font-weight: 400; text-transform: uppercase;
+    font-size: .72rem; letter-spacing: .1em; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line);
+  }
+  td { padding: 7px 10px 7px 0; border-bottom: 1px dotted var(--rule-dot); }
+  hr { border: 0; border-top: 1px solid var(--line); }
+
+  /* the metadata line: mono, upright, quiet — a URL is not prose */
+  h1 + blockquote + p { font-size: 12px; line-height: 1.6; color: var(--dim); margin: -.4rem 0 1.6rem; }
+  h1 + blockquote + p em { font-style: normal; }
+  h1 + blockquote + p a { display: block; margin-top: 3px; }
+
+  /* rules for agents: real content, deliberately quiet */
+  .agentnote { margin: 2.4rem 0 0; padding: 16px 18px; border: 1px dashed var(--line); border-radius: 8px; }
+  .agentnote h2 { margin: 0 0 .6rem; padding: 0; border: 0; font-size: .8rem; color: var(--dim); }
+  .agentnote h2::before { content: "// "; }
+  .agentnote p, .agentnote li { font-size: .86rem; color: var(--dim); }
+  .agentnote ul { margin: .5rem 0 0; }
+
+  footer.page { margin-top: 2.4rem; padding-top: 14px; border-top: 1px solid var(--line);
+                font-size: 11.5px; color: var(--dim); }
+  footer.page a { border: 0; }
+
+  /* ---- responsive ------------------------------------------------------ */
+  @media (max-width: 900px) {
+    /* minmax(0,1fr) is required: a child wider than the track (the swipeable
+       nav) would otherwise grow the column and push the page off-screen */
+    .shell { grid-template-columns: minmax(0, 1fr); }
+    .rail, .rail nav { min-width: 0; max-width: 100%; }
+    .rail {
+      position: static; height: auto; flex-direction: row; flex-wrap: wrap;
+      align-items: baseline; gap: 8px 16px; padding: 12px 16px;
+      border-right: 0; border-bottom: 1px solid var(--line);
+    }
+    .rail .id { margin: 0; padding: 0; }
+    /* one swipeable row instead of five wrapped rows: 12 links wrapped to ~250px
+       of header on a 390px screen and pushed the profile below the fold */
+    .rail nav { flex-direction: row; flex-wrap: nowrap; gap: 0 14px; overflow-x: auto;
+                scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .rail nav::-webkit-scrollbar { display: none; }
+    .rail nav a { border-left: 0; border-bottom: 2px solid transparent; padding: 0 2px;
+                  min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; }
+    .rail nav a.active { border-left: 0; border-bottom-color: var(--prompt); background: transparent; }
+    .rail .mdlink { display: none; }
+    .rail .util { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0 14px; }
+    .rail .util a { min-height: 44px; align-items: center; padding: 0; }
+    .rail .util a em { display: none; }
+    main { padding: 0 12px; }
+    .win { margin: 14px auto 24px; border-radius: 8px; }
+    .win .body { padding: 22px 18px 26px; }
+    h1 { font-size: 1.4rem; }
+    body { font-size: 15px; }
+  }
+  @media (max-width: 430px) {
+    h1::before { content: "\\276F "; }
+    h1 { font-size: 1.3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+  @media print {
+    .rail, .bar { display: none; }
+    .win { border: 0; box-shadow: none; margin: 0; max-width: none; }
+    .win .body { padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="id">
+      <div class="nm">Alexandre Tostivint</div>
+      <div class="rl">Senior Cloud Architect</div>
+      <div class="rl">Rennes, France</div>
+    </div>
+    <nav aria-label="Sections">
+__NAV__
+    </nav>
+    <div class="util">
+      <a href="https://cv.alexandre.tostivint.bzh/resume.pdf">CV <em>PDF &#8599;</em></a>
+      <a href="https://www.linkedin.com/in/alexandretostivint/">LinkedIn <em>&#8599;</em></a>
+      <a href="https://github.com/atostivint">GitHub <em>&#8599;</em></a>
+      <a href="mailto:alexandre@tostivint.bzh">Email <em>&#8599;</em></a>
+    </div>
+    <div class="mdlink"><a href="/index.md">/index.md</a> for agents</div>
+  </aside>
+
+  <main>
+    <div class="win">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="title">alexandre@tostivint:~ % curl tostivint.bzh</span>
+      </div>
+      <div class="body">
+__CONTENT__
+        <footer class="page">__STAMP__ · <a href="https://github.com/atostivint/agent-profile">atostivint/agent-profile</a></footer>
+      </div>
+    </div>
+  </main>
+</div>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.rail nav a')];
+  const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if (!targets.length) return;
+  const on = id => links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  const io = new IntersectionObserver(es => {
+    const vis = es.filter(e => e.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (vis.length) on(vis[0].target.id);
+  }, { rootMargin: '-8% 0px -72% 0px', threshold: 0 });
+  targets.forEach(t => io.observe(t));
+  on(targets[0].id);
+})();
+</script>
+</body>
+</html>
+"""
 
 
 def last_commit_date() -> str | None:
@@ -55,152 +283,44 @@ def stamp(text: str, date: str) -> str:
     return new
 
 
-PAGE = """<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Alexandre Tostivint — Senior Cloud Architect</title>
-<meta name="description" content="Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP." />
-<link rel="canonical" href="__SITE_URL__/" />
-<link rel="alternate" type="text/markdown" href="/index.md" title="Agent-readable profile" />
-<link rel="alternate" type="application/pdf" href="https://cv.alexandre.tostivint.bzh/resume.pdf" title="CV" />
-<style>
-  :root {
-    --ink: #1b1a17;
-    --ink-soft: #4a463d;
-    --muted: #6f6a5f;
-    --paper: #f5f1e8;
-    --paper-2: #fbf8f2;
-    --rule: #d9d2c3;
-    --accent: #7a4a1d;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font: 400 17px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    text-rendering: optimizeLegibility;
-  }
-  .shell { max-width: 60rem; margin: 0 auto; padding: 0 24px; }
-  header.top {
-    border-bottom: 1px solid var(--rule);
-    background: linear-gradient(180deg, var(--paper-2), var(--paper));
-  }
-  header.top .shell {
-    display: flex; flex-wrap: wrap; gap: 12px 24px;
-    align-items: baseline; justify-content: space-between;
-    padding-top: 26px; padding-bottom: 20px;
-  }
-  .who { font: 600 15px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
-         letter-spacing: .02em; }
-  .who span { color: var(--muted); font-weight: 400; }
-  .agent-link { font: 400 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-                color: var(--accent); text-decoration: none;
-                border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px;
-                background: #fff; white-space: nowrap; }
-  .agent-link:hover { border-color: var(--accent); }
-  main { display: grid; grid-template-columns: minmax(0, 1fr) 16.5rem; gap: 56px;
-         padding: 44px 0 72px; align-items: start; }
-  .doc { min-width: 0; }
-  .doc h1 { font: 500 2.6rem/1.1 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-            margin: 0 0 .5rem; letter-spacing: -.01em; }
-  .doc h2 { font: 500 1.42rem/1.25 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-            margin: 2.6rem 0 .7rem; padding-top: 1.1rem; border-top: 1px solid var(--rule); }
-  .doc h3 { font: 600 1.06rem/1.35 inherit; margin: 1.9rem 0 .5rem; letter-spacing: .01em; }
-  .doc p, .doc li { color: var(--ink-soft); }
-  .doc blockquote { margin: 0 0 1.2rem; padding: 0 0 0 18px; border-left: 3px solid var(--accent); }
-  .doc blockquote p { font-size: 1.1rem; color: var(--ink); margin: 0; }
-  .doc em { font-style: italic; }
-  .doc a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-  .doc ul, .doc ol { padding-left: 1.15rem; }
-  .doc li { margin: .32rem 0; }
-  .doc table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .95rem; }
-  .doc th { text-align: left; font-weight: 600; color: var(--ink);
-            border-bottom: 1px solid var(--ink); padding: 6px 10px 6px 0; }
-  .doc td { border-bottom: 1px solid var(--rule); padding: 7px 10px 7px 0;
-            color: var(--ink-soft); vertical-align: top; }
-  .doc code { font: 400 .9em/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
-              background: #ece6d9; padding: .1em .35em; border-radius: 3px; }
-  .doc hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
-  aside { position: sticky; top: 28px; font-size: .92rem; }
-  aside .card { border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2);
-                padding: 18px 18px 16px; margin-bottom: 18px; }
-  aside .card h4 { margin: 0 0 .55rem; font: 600 .74rem/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
-                   letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  aside .card p { margin: 0 0 .6rem; color: var(--ink-soft); }
-  aside .card p:last-child { margin-bottom: 0; }
-  aside .card a { color: var(--accent); }
-  aside code { font: 400 .84rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
-               background: #ece6d9; padding: .12em .35em; border-radius: 3px; word-break: break-all; }
-  .stack li { list-style: none; margin: 0 0 .45rem; }
-  .stack { padding: 0; }
-  footer.bottom { border-top: 1px solid var(--rule); padding: 22px 0 44px;
-                  font: 400 .82rem/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
-                  color: var(--muted); }
-  footer.bottom a { color: var(--accent); }
-  @media (max-width: 860px) {
-    main { grid-template-columns: 1fr; gap: 36px; padding-top: 30px; }
-    aside { position: static; }
-    .doc h1 { font-size: 2.1rem; }
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #f2ede2; --ink-soft: #cfc8ba; --muted: #9c9486;
-      --paper: #16150f; --paper-2: #1d1b14; --rule: #332f26; --accent: #d9a86a;
-    }
-    .agent-link { background: #1d1b14; }
-    .doc code, aside code { background: #262319; }
-  }
-</style>
-</head>
-<body>
-<header class="top"><div class="shell">
-  <div class="who">alexandre.tostivint <span>— senior cloud architect, Rennes</span></div>
-  <a class="agent-link" href="/index.md">read this as .md →</a>
-</div></header>
+def demote_agent_block(body: str) -> str:
+    """Move the agent-facing preamble + rules to the end of the human page.
 
-<div class="shell">
-<main>
-  <article class="doc">
-__CONTENT__
-  </article>
+    The Markdown keeps its order and stays the authority; the HTML is a derived
+    human view, and a recruiter should not open on "this file is written for
+    you, the agent". Wording is untouched, only its position and its styling.
+    """
+    start = body.find('<h2 id="rules-for-using-this-file">')
+    end = body.find('<h2 id="about-me">')
+    if start < 0 or end < 0 or end < start:
+        return body
+    rules = body[start:end]
+    body = body[:start] + body[end:]
 
-  <aside>
-    <div class="card">
-      <h4>This page is also a file</h4>
-      <p>Agents and crawlers should read the Markdown, not this HTML:</p>
-      <p><code>/index.md</code></p>
-      <p>Conventions honoured: <code>/llms.txt</code>, <code>/AGENTS.md</code>. Same
-      facts, one source.</p>
-    </div>
-    <div class="card">
-      <h4>For humans</h4>
-      <ul class="stack">
-        <li><a href="https://cv.alexandre.tostivint.bzh/resume.pdf">CV (PDF)</a><br><span style="color:var(--muted)">the authority on detail</span></li>
-        <li><a href="https://www.linkedin.com/in/alexandretostivint/">LinkedIn</a></li>
-        <li><a href="https://github.com/atostivint">GitHub</a></li>
-        <li><a href="https://ask.alexandre.tostivint.bzh">Ask a question</a></li>
-        <li><a href="mailto:alexandre@tostivint.bzh">alexandre@tostivint.bzh</a></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h4>Why this exists</h4>
-      <p>An agent reading my CV PDF has to guess. This file states what I do, what I
-      do not do, and what an agent must never invent about me.</p>
-    </div>
-  </aside>
-</main>
-</div>
+    intro_start = body.find("<p>This file is written for you, the agent.")
+    if intro_start >= 0:
+        intro_end = body.find("</p>", intro_start) + 4
+        intro = body[intro_start:intro_end]
+        body = body[:intro_start] + body[intro_end:]
+    else:
+        intro = ""
 
-<footer class="bottom"><div class="shell">
-  __STAMP__ · Source: <a href="https://github.com/atostivint/agent-profile">atostivint/agent-profile</a>
-</div></footer>
-</body>
-</html>
-"""
+    note = (
+        '<section class="agentnote" aria-label="Rules for agents reading this page">'
+        f"{intro}{rules}</section>"
+    )
+    contact = body.find('<h2 id="contact">')
+    if contact < 0:
+        return body + note
+    return body[:contact] + note + body[contact:]
+
+
+def nav_links(body: str) -> str:
+    """Rail navigation in rendered order (the rules block moves to the end)."""
+    return "\n".join(
+        f'      <a href="#{frag}">{re.sub(r"<[^>]+>", "", label).strip()}</a>'
+        for frag, label in re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body, re.S)
+    )
 
 
 def main() -> None:
@@ -217,13 +337,16 @@ def main() -> None:
     for twin in ("llms.txt", "AGENTS.md"):
         (ROOT / twin).write_text(text, encoding="utf-8")
 
-    html_body = markdown.markdown(
+    body = markdown.markdown(
         text,
         extensions=["tables", "attr_list", "fenced_code", "toc"],
         output_format="html5",
     )
+    body = demote_agent_block(body)
+
     page = (
-        PAGE.replace("__CONTENT__", html_body)
+        PAGE.replace("__CONTENT__", body)
+        .replace("__NAV__", nav_links(body))
         .replace("__STAMP__", f"Last updated {date}")
         .replace("__SITE_URL__", SITE_URL)
     )

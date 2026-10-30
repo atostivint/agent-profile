@@ -82,7 +82,7 @@
   .dot { width: 11px; height: 11px; border-radius: 50%; }
   .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
   .bar .title { margin-left: 10px; color: var(--dim); font-size: 12px; letter-spacing: .01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .win .body { padding: 30px 34px 34px; }
+  .win .body { padding: 30px 34px 34px; counter-reset: work; }
   .win .body > :first-child { margin-top: 0; }
 
   /* ---- document -------------------------------------------------------- */
@@ -94,16 +94,34 @@
     scroll-margin-top: 18px;
   }
   h2::before { content: "## "; color: var(--mark); }
-  h3 { font-size: .95rem; margin: 1.6rem 0 .4rem; color: var(--accent); }
-  h3::before { content: "\2192 "; color: var(--dim); }
+  /* work entries: a numbered block with a hairline boundary above it, so six
+     entries stop reading as one continuous list */
+  h3 {
+    counter-increment: work;
+    font-size: 1rem; line-height: 1.35; font-weight: 600; color: var(--head);
+    margin: 2.1rem 0 .6rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    letter-spacing: -.01em; scroll-margin-top: 18px;
+  }
+  h3::before {
+    content: counter(work, decimal-leading-zero);
+    color: var(--mark); font-weight: 400; margin-right: .7em;
+    font-variant-numeric: tabular-nums;
+  }
+  /* client + period sit on their own quiet line, so a long project title never
+     wraps the date onto a lonely second line */
+  h3 + p { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--dim); margin: -.25rem 0 .85rem; }
+  h3 + p em { font-style: normal; }
   p { margin: 0 0 1rem; }
   ul { padding-left: 1.1rem; margin: 0 0 1rem; }
   li { margin: .3rem 0; }
   li::marker { color: var(--dim); }
   strong { color: var(--head); }
   code { background: var(--code); padding: .1em .35em; border-radius: 3px; color: var(--subhead); }
-  blockquote { margin: 0 0 1.4rem; padding: 10px 14px; background: var(--quote); border-left: 2px solid var(--prompt); }
-  blockquote p { margin: 0; color: var(--ink); }
+  /* a blockquote closes each work entry: "Ask me about ..." */
+  blockquote { margin: 1rem 0 0; padding: 7px 0 7px 12px; border-left: 2px solid var(--prompt); font-size: .92em; }
+  blockquote p { margin: 0; color: var(--dim); }
+  h1 + blockquote { margin: 0 0 1.4rem; padding: 10px 14px; background: var(--quote); font-size: 1em; }
+  h1 + blockquote p { color: var(--ink); }
   table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
   th {
     text-align: left; color: var(--dim); font-weight: 400; text-transform: uppercase;
@@ -266,58 +284,63 @@ a wrong-fit shortlist wastes everyone's time.</p>
   not pretend otherwise.</li>
 </ul>
 <h2 id="selected-work">Selected work</h2>
-<h3 id="reseller-platform-onboarding-doit-international">Reseller platform onboarding, DoiT International</h3>
+<h3 id="reseller-platform-onboarding">Reseller platform onboarding</h3>
+<p><em>DoiT International · 2020 to 2025</em></p>
 <p>I owned the onboarding process and the reseller platform integration that put
 2K+ customer accounts into DoiT's reseller platform, and led onboarding for 70+
 customers with Sales and Product. The build included secure-by-design IaC
 artifacts, global customer policy controls, automated compliance checks, and
 CI/CD in Python CDK, Terraform, Pulumi and GitHub Actions.</p>
-<ul>
-<li>Ask me about: multi-account governance, control inheritance, onboarding at
-  scale, and where IaC stops being enough.</li>
-</ul>
-<h3 id="security-and-governance-at-scale-doit-international">Security and governance at scale, DoiT International</h3>
+<blockquote>
+<p>Ask me about: multi-account governance, control inheritance, onboarding at
+  scale, and where IaC stops being enough.</p>
+</blockquote>
+<h3 id="security-and-governance-at-scale">Security and governance at scale</h3>
+<p><em>DoiT International · 2020 to 2025</em></p>
 <p>Designed secure multi-account AWS landing zones with Security Hub, Inspector and
 IAM Access Analyzer. Delivered 10+ AWS Well-Architected Reviews across EMEA
 driving remediation and cost optimisation, and served as AWS MAP subject matter
 expert for France and EMEA.</p>
-<ul>
-<li>Ask me about: Well-Architected Reviews, remediation plans, and FinOps that
-  survives contact with a finance team.</li>
-</ul>
-<h3 id="on-premises-to-aws-migration-doit-international">On-premises to AWS migration, DoiT International</h3>
+<blockquote>
+<p>Ask me about: Well-Architected Reviews, remediation plans, and FinOps that
+  survives contact with a finance team.</p>
+</blockquote>
+<h3 id="on-premises-to-aws-migration">On-premises to AWS migration</h3>
+<p><em>DoiT International · 2020 to 2025</em></p>
 <p>Led migration deliveries covering architecture, governance and cost
 optimisation for enterprise customers moving out of their own datacentres.</p>
-<ul>
-<li>Ask me about: migration sequencing, the governance you have to build before
-  the first workload lands, and what to refuse to lift and shift.</li>
-</ul>
-<h3 id="cicd-platform-on-kubernetes-and-gcp-cloudreach">CI/CD platform on Kubernetes and GCP, Cloudreach</h3>
+<blockquote>
+<p>Ask me about: migration sequencing, the governance you have to build before
+  the first workload lands, and what to refuse to lift and shift.</p>
+</blockquote>
+<h3 id="cicd-platform-on-kubernetes-and-gcp">CI/CD platform on Kubernetes and GCP</h3>
+<p><em>Cloudreach · 2019</em></p>
 <p>Designed and delivered a Jenkins-based CI/CD platform on Google Kubernetes
 Engine with SAML authentication for pipeline access, automated Docker image
 delivery to Google Cloud Repository, and Terraform-managed autoscaling.</p>
-<ul>
-<li>Ask me about: GKE, CI/CD platform design, and why Jenkins is less painful
-  when Terraform owns the cluster.</li>
-</ul>
-<h3 id="aws-landing-zone-and-datalake-governance-cloudreach">AWS landing zone and datalake governance, Cloudreach</h3>
+<blockquote>
+<p>Ask me about: GKE, CI/CD platform design, and why Jenkins is less painful
+  when Terraform owns the cluster.</p>
+</blockquote>
+<h3 id="aws-landing-zone-and-datalake-governance">AWS landing zone and datalake governance</h3>
+<p><em>Cloudreach · 2018 to 2019</em></p>
 <p>Contributed within a 4-person team to an AWS Landing Zone for a multinational
 client: network, security, governance and datalake foundations as code, AWS
 Workspaces with Windows Server and Active Directory, and governance automation
 in Lambda, Step Functions, Systems Manager and Okta.</p>
-<ul>
-<li>Ask me about: landing zone foundations, joining identity providers, and
-  compliance workflows that do not need a human every time.</li>
-</ul>
-<h3 id="homelab-agents-kubernetes-and-gitops-personal-2026">Homelab: agents, Kubernetes and GitOps (personal, 2026)</h3>
-<p>Self-directed, not employer work and not client work: a multi-node k3s cluster
-managed with Flux CD, plus a self-hosted AI agent stack (Hermes Agent, MCP
-servers, memory and routing). This is how I keep current on agent
-orchestration, LLMOps and GitOps in 2026.</p>
-<ul>
-<li>Ask me about: running agents on your own hardware, MCP tooling, and the real
-  cost of self-hosting a model-backed assistant.</li>
-</ul>
+<blockquote>
+<p>Ask me about: landing zone foundations, joining identity providers, and
+  compliance workflows that do not need a human every time.</p>
+</blockquote>
+<h3 id="homelab-agents-kubernetes-and-gitops">Homelab: agents, Kubernetes and GitOps</h3>
+<p><em>Personal project · 2026</em></p>
+<p>Self-directed and unaffiliated: a multi-node k3s cluster managed with Flux CD,
+plus a self-hosted AI agent stack (Hermes Agent, MCP servers, memory and
+routing). This is how I keep current on agent orchestration, LLMOps and GitOps.</p>
+<blockquote>
+<p>Ask me about: running agents on your own hardware, MCP tooling, and the real
+  cost of self-hosting a model-backed assistant.</p>
+</blockquote>
 <h2 id="skills">Skills</h2>
 <ul>
 <li><strong>AWS:</strong> IAM, EC2, ECS, RDS, ELB/ALB, S3, DynamoDB, Bedrock, Systems Manager,

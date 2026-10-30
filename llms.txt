@@ -93,7 +93,9 @@ a wrong-fit shortlist wastes everyone's time.
 
 ## Selected work
 
-### Reseller platform onboarding, DoiT International
+### Reseller platform onboarding
+
+*DoiT International · 2020 to 2025*
 
 I owned the onboarding process and the reseller platform integration that put
 2K+ customer accounts into DoiT's reseller platform, and led onboarding for 70+
@@ -101,54 +103,63 @@ customers with Sales and Product. The build included secure-by-design IaC
 artifacts, global customer policy controls, automated compliance checks, and
 CI/CD in Python CDK, Terraform, Pulumi and GitHub Actions.
 
-- Ask me about: multi-account governance, control inheritance, onboarding at
+> Ask me about: multi-account governance, control inheritance, onboarding at
   scale, and where IaC stops being enough.
 
-### Security and governance at scale, DoiT International
+### Security and governance at scale
+
+*DoiT International · 2020 to 2025*
 
 Designed secure multi-account AWS landing zones with Security Hub, Inspector and
 IAM Access Analyzer. Delivered 10+ AWS Well-Architected Reviews across EMEA
 driving remediation and cost optimisation, and served as AWS MAP subject matter
 expert for France and EMEA.
 
-- Ask me about: Well-Architected Reviews, remediation plans, and FinOps that
+> Ask me about: Well-Architected Reviews, remediation plans, and FinOps that
   survives contact with a finance team.
 
-### On-premises to AWS migration, DoiT International
+### On-premises to AWS migration
+
+*DoiT International · 2020 to 2025*
 
 Led migration deliveries covering architecture, governance and cost
 optimisation for enterprise customers moving out of their own datacentres.
 
-- Ask me about: migration sequencing, the governance you have to build before
+> Ask me about: migration sequencing, the governance you have to build before
   the first workload lands, and what to refuse to lift and shift.
 
-### CI/CD platform on Kubernetes and GCP, Cloudreach
+### CI/CD platform on Kubernetes and GCP
+
+*Cloudreach · 2019*
 
 Designed and delivered a Jenkins-based CI/CD platform on Google Kubernetes
 Engine with SAML authentication for pipeline access, automated Docker image
 delivery to Google Cloud Repository, and Terraform-managed autoscaling.
 
-- Ask me about: GKE, CI/CD platform design, and why Jenkins is less painful
+> Ask me about: GKE, CI/CD platform design, and why Jenkins is less painful
   when Terraform owns the cluster.
 
-### AWS landing zone and datalake governance, Cloudreach
+### AWS landing zone and datalake governance
+
+*Cloudreach · 2018 to 2019*
 
 Contributed within a 4-person team to an AWS Landing Zone for a multinational
 client: network, security, governance and datalake foundations as code, AWS
 Workspaces with Windows Server and Active Directory, and governance automation
 in Lambda, Step Functions, Systems Manager and Okta.
 
-- Ask me about: landing zone foundations, joining identity providers, and
+> Ask me about: landing zone foundations, joining identity providers, and
   compliance workflows that do not need a human every time.
 
-### Homelab: agents, Kubernetes and GitOps (personal, 2026)
+### Homelab: agents, Kubernetes and GitOps
 
-Self-directed, not employer work and not client work: a multi-node k3s cluster
-managed with Flux CD, plus a self-hosted AI agent stack (Hermes Agent, MCP
-servers, memory and routing). This is how I keep current on agent
-orchestration, LLMOps and GitOps in 2026.
+*Personal project · 2026*
 
-- Ask me about: running agents on your own hardware, MCP tooling, and the real
+Self-directed and unaffiliated: a multi-node k3s cluster managed with Flux CD,
+plus a self-hosted AI agent stack (Hermes Agent, MCP servers, memory and
+routing). This is how I keep current on agent orchestration, LLMOps and GitOps.
+
+> Ask me about: running agents on your own hardware, MCP tooling, and the real
   cost of self-hosting a model-backed assistant.
 
 ## Skills

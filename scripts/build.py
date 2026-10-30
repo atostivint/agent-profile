@@ -119,7 +119,7 @@ PAGE = """<!doctype html>
   .dot { width: 11px; height: 11px; border-radius: 50%; }
   .dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
   .bar .title { margin-left: 10px; color: var(--dim); font-size: 12px; letter-spacing: .01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .win .body { padding: 30px 34px 34px; }
+  .win .body { padding: 30px 34px 34px; counter-reset: work; }
   .win .body > :first-child { margin-top: 0; }
 
   /* ---- document -------------------------------------------------------- */
@@ -131,16 +131,34 @@ PAGE = """<!doctype html>
     scroll-margin-top: 18px;
   }
   h2::before { content: "## "; color: var(--mark); }
-  h3 { font-size: .95rem; margin: 1.6rem 0 .4rem; color: var(--accent); }
-  h3::before { content: "\\2192 "; color: var(--dim); }
+  /* work entries: a numbered block with a hairline boundary above it, so six
+     entries stop reading as one continuous list */
+  h3 {
+    counter-increment: work;
+    font-size: 1rem; line-height: 1.35; font-weight: 600; color: var(--head);
+    margin: 2.1rem 0 .6rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+    letter-spacing: -.01em; scroll-margin-top: 18px;
+  }
+  h3::before {
+    content: counter(work, decimal-leading-zero);
+    color: var(--mark); font-weight: 400; margin-right: .7em;
+    font-variant-numeric: tabular-nums;
+  }
+  /* client + period sit on their own quiet line, so a long project title never
+     wraps the date onto a lonely second line */
+  h3 + p { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--dim); margin: -.25rem 0 .85rem; }
+  h3 + p em { font-style: normal; }
   p { margin: 0 0 1rem; }
   ul { padding-left: 1.1rem; margin: 0 0 1rem; }
   li { margin: .3rem 0; }
   li::marker { color: var(--dim); }
   strong { color: var(--head); }
   code { background: var(--code); padding: .1em .35em; border-radius: 3px; color: var(--subhead); }
-  blockquote { margin: 0 0 1.4rem; padding: 10px 14px; background: var(--quote); border-left: 2px solid var(--prompt); }
-  blockquote p { margin: 0; color: var(--ink); }
+  /* a blockquote closes each work entry: "Ask me about ..." */
+  blockquote { margin: 1rem 0 0; padding: 7px 0 7px 12px; border-left: 2px solid var(--prompt); font-size: .92em; }
+  blockquote p { margin: 0; color: var(--dim); }
+  h1 + blockquote { margin: 0 0 1.4rem; padding: 10px 14px; background: var(--quote); font-size: 1em; }
+  h1 + blockquote p { color: var(--ink); }
   table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
   th {
     text-align: left; color: var(--dim); font-weight: 400; text-transform: uppercase;

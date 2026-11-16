@@ -1,31 +1,10 @@
 # Décisions — agent-profile
 
-Une ligne par arbitrage, datée. Le pourquoi est aussi important que le choix.
+Une ligne par arbitrage, datée. Le pourquoi compte autant que le choix.
 
-- **2026-11-16 — banque mémoire** : le dépôt est **routé** vers `cv-suite` par une entrée
-  `mapPathToBank` de la configuration Hindsight de la machine, comme curriculum-vitae, ask, ask-dev,
-  atostivint, rover-resume et resume-json. Le mapping est lu **au démarrage d'une session** : la
-  session ouverte avant le changement tourne encore sur `coding-agent::agent-profile` (0 fait), et
-  `cv-suite` n'est effectif qu'à la session suivante. Vérification : `hindsight_diagnose` doit rendre
-  `"bank_id": "cv-suite"`. Une banque commune évite de perdre le contexte d'un dépôt à l'autre.
-- **2026-11-16 — fichiers générés** : `index.html`, `llms.txt` et `AGENTS.md` ne s'éditent jamais à
-  la main. Ils sont régénérés par `scripts/build.py` depuis `index.md`, seule source de vérité ; le
-  fichier de départ est une copie octet pour octet, la page HTML est rendue. Une correction de fond
-  se fait toujours dans `index.md`.
-- **2026-11-16 — commit, push, publication** : `git commit` et `git push` sont le comportement par
-  défaut une fois la tâche vérifiée (précédent curriculum-vitae, décision 2026-11-11). Le tag, la
-  release et la publication GitHub Pages restent sur demande explicite : publier n'est pas
-  commiter.
-- **2026-11-16 — cinq domaines et unité atomique** : routage en cinq domaines (`content`,
-  `generator`, `gates`, `edge`, `agent-docs`). `index.md` et ses trois fichiers générés forment une
-  unité atomique : une seule tâche active dessus à la fois, jamais deux `scripts/build.py` en
-  parallèle, sinon les dérivés divergent.
-- **2026-11-16 — la CI n'estampille pas la date** : `check.yml` passait `--date "$(git log -1
-  --format=%cs)"`, soit la date de HEAD, alors que `build.py` prend celle du dernier commit touchant
-  `index.md`. Tout commit hors contenu (`61beed8`, run `43973960585`) recevait une date différente et
-  `consistency` échouait. La CI n'a plus de `--date` : `build.py` reste la seule source de la date.
-- **2026-11-16 — preuve avant/après commit** : un worker ne peut pas prouver un
-  `git diff --exit-code` vide sur `index.md` + générés, puisque `index.md` est modifié par
-  construction pendant la tâche. Sa preuve est l'**idempotence** : `build.py` deux fois de suite,
-  trois générés identiques. Le diff vide sur les quatre fichiers est un contrôle **post-commit** sur
-  arbre propre, celui du job `consistency`. Exiger l'inverse rendait le contrat impossible.
+- **2026-11-16 — banque mémoire** : le dépôt est routé vers `cv-suite` par `mapPathToBank` dans la configuration Hindsight de la machine, comme les autres dépôts de la suite CV. Le mapping est lu au démarrage d'une session : la session ouverte avant le changement tournait encore sur `coding-agent::agent-profile` (0 fait). Vérification : `hindsight_diagnose` doit rendre `"bank_id": "cv-suite"`.
+- **2026-11-16 — fichiers générés (abrogé le 17)** : `index.html`, `llms.txt` et `AGENTS.md` venaient de `build.py`. Remplacé par SIMP-1 : `llms.txt` supprimé, `index.html` devenu redirect statique, `AGENTS.md` copie manuelle.
+- **2026-11-16 — preuve avant/après commit** : un worker ne peut pas prouver un `git diff --exit-code` vide pendant une tâche, puisque la source est modifiée par construction. Le diff vide est un contrôle post-commit ; la preuve de worker est le diff du SCOPE et les commandes exécutées. Toujours valable.
+- **2026-11-16 — CI (abrogé le 17)** : `check.yml` avait été corrigé pour ne plus imposer la date de HEAD (run `43975219001` vert). SIMP-1 supprime la CI : la vérification redevient manuelle.
+- **2026-11-17 — simplification** : l'utilisateur a choisi de garder `index.md`, `.nojekyll`, `README.md` et `AGENTS.md`, et de supprimer `scripts/build.py`, `scripts/check_links.py`, `scripts/verify_facts.py`, `worker/content-negotiation.js`, `.github/workflows/check.yml` et `llms.txt`. Raison : un profil pour agent est un fichier texte et n'a besoin ni de build ni de portes automatiques. `index.html` reste, réduit à un redirect statique : sans lui, l'URL racine de Pages renvoie 404. Conséquence assumée : la dérive CV et les liens morts ne sont plus détectés automatiquement.
+- **2026-11-17 — deux domaines** : routage réduit à `content` et `agent-docs`. Les notes `generator`, `gates` et `edge` sont supprimées avec leurs fichiers. `index.md` et `AGENTS.md` forment la seule unité atomique restante.

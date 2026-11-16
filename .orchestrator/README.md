@@ -1,49 +1,36 @@
 # Espace de travail de l'orchestrateur — agent-profile
 
-Ce dossier est la mémoire de l'orchestrateur. Il est versionné pour survivre aux sessions, aux
-compactions et aux reprises. Il s'adapte à un dépôt où `index.md` est la seule source de vérité et
-où `index.html`, `llms.txt` et `AGENTS.md` sont générés.
+Deux fichiers techniques, deux notes de domaine. Rien de plus pour un profil qui est un fichier texte.
 
 | Fichier | Rôle |
 |---|---|
-| `POLICY.md` | Règles dures, contrat de preuve, périmètre, routage, format de réponse. Lu au triage. |
-| `registry.md` | Domaine → session worker, fichiers en jeu, statut. Mémoire à long terme. |
-| `inbox.md` | Items à trier et leur état (`ready`, `blocked`, `in_progress`, `done`, `cancelled`). |
-| `decisions.md` | Arbitrages datés, une ligne par décision. |
+| `POLICY.md` | Règles dures, preuve, routage, format de réponse. |
+| `registry.md` | Domaine → session worker, fichiers en jeu, statut. |
+| `inbox.md` | Items et leur état (`ready`, `blocked`, `in_progress`, `done`, `cancelled`). |
+| `decisions.md` | Arbitrages datés, une ligne chacun. |
 
-Les notes de domaine vivent dans `.opencode/domains/`. `AGENTS.md` (racine) décrit ce que le dépôt
-attend de tout agent ; il est généré, jamais édité ici.
+Les notes de domaine vivent dans `.opencode/domains/`.
 
 ## Ordre de démarrage
 
-1. `AGENTS.md` (racine) — ce que le dépôt attend de tout agent.
-2. `.orchestrator/POLICY.md` — le contrat : preuve, périmètre, interdits.
-3. `.orchestrator/registry.md` — où en est chaque domaine, quelle session reprendre.
-4. `.orchestrator/inbox.md` — ce qui reste à faire.
+1. `AGENTS.md` (racine) — ce que le dépôt attend d'un agent.
+2. `.orchestrator/POLICY.md` — le contrat.
+3. `.orchestrator/registry.md` — la session à reprendre.
+4. `.orchestrator/inbox.md` — ce qu'il reste à faire.
 5. `.orchestrator/decisions.md` — pourquoi c'est comme ça.
 6. `.opencode/domains/<domaine>.md` — la surface exacte avant d'écrire un brief.
 
 ## La boucle
 
-1. « Prends le prochain item de `.orchestrator/inbox.md` » (ou `/triage <item>`).
-2. L'orchestrateur classe l'item contre `.opencode/domains/`, lit `git status` et
-   `git worktree list`, puis écrit un brief GOAL / SCOPE / ACCEPTANCE / PROOF / STOP.
-3. Un `worker` par tâche indépendante, en parallèle si les fichiers sont disjoints — jamais deux
-   `scripts/build.py` en parallèle sur l'unité atomique `index.md` + générés.
-4. Relire `git status` et `git diff --stat` après le worker, avant son rapport.
-5. Pas de bloc PROOF → renvoi une fois → sinon échec ; revue en une passe sur le diff courant.
-6. L'orchestrateur met à jour `registry.md`, la note de domaine et le statut dans `inbox.md`,
-   puis commit et push par défaut une fois vérifié.
+1. Prendre le prochain item de l'inbox.
+2. Lire `git status`, classer contre les domaines, écrire un brief GOAL / SCOPE / ACCEPTANCE / PROOF / STOP.
+3. Un worker par tâche ; aucun fichier hors SCOPE.
+4. Pas de bloc PROOF → renvoyer une fois → sinon clore en échec.
+5. Revue du diff en une passe, puis mise à jour de registry, inbox, décisions et note de domaine.
 
 ## À ne pas faire
 
-- Laisser l'orchestrateur éditer un fichier du projet : il n'écrit que dans `.orchestrator/` et
-  `.opencode/domains/`, c'est interdit volontairement.
-- Lancer deux items sur `index.md` : c'est une unité atomique avec `index.html`, `llms.txt` et
-  `AGENTS.md`, une seule tâche active à la fois.
-- Lancer deux `scripts/build.py` en parallèle : les fichiers générés se marcheraient dessus.
-- Éditer à la main un fichier généré (`index.html`, `llms.txt`, `AGENTS.md`) : toute correction de
-  fond se fait dans `index.md`, puis `python scripts/build.py`.
-- Dupliquer un travail déjà présent sur une branche `orch-*` ou dans un fichier non commité.
-- Taguer, releaser ou publier sur GitHub Pages sans que l'utilisateur le demande. Commiter et
-  pousser, si (voir `.orchestrator/POLICY.md`).
+- Laisser l'orchestrateur éditer un fichier du projet.
+- Deux tâches actives sur `index.md` et `AGENTS.md`.
+- Réintroduire un générateur, une CI ou un script de contrôle sans que l'utilisateur le demande : c'est précisément ce qui a été retiré le 2026-11-17.
+- Publier sans demande explicite.

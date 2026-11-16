@@ -2,62 +2,44 @@
 
 ## Possède
 
-- `index.md` — seule source de vérité du profil. Tout le contenu public en part.
+- `index.md` — le profil, seule source de vérité.
+- `AGENTS.md` — sa copie pour les agents qui lisent la racine du dépôt.
+- `README.md`, `index.html` (redirect statique), `.nojekyll`.
 
 ## Ne possède pas
 
-- `index.html`, `llms.txt`, `AGENTS.md` : générés par `scripts/build.py`, jamais édités à la main.
-  Une correction de fond se fait dans `index.md`, puis on régénère.
-- Le rendu HTML lui-même → `generator` ; les portes de vérification → `gates`.
+- Le CV privé `../curriculum-vitae` : il fait autorité mais n'est pas modifiable ici.
+- Les fichiers d'orchestration → `agent-docs`.
 
 ## Invariants
 
-- Le CV privé `../curriculum-vitae` fait autorité : aucune expérience, certification, école ou
-  techno inventée. `scripts/verify_facts.py` est la porte anti-dérive.
-- Les chiffres se citent avec leur période : « 300+ environnements clients » = base DoiT 2020–2025,
-  ni 300 projets livrés seuls, ni 300 aujourd'hui.
-- Jamais de tarif, salaire, TJM, téléphone ni date de disponibilité dans le profil : c'est « sur
-  demande ». Ne contacter personne au nom d'Alexandre.
-- AWS est le cloud principal ; Azure n'est pas présenté comme le premier cloud. Les services Azure
-  sont une connaissance de travail.
-- Nom professionnel : « Alexandre Tostivint », jamais « Elektro ».
-- Après toute édition de `index.md` : `python scripts/build.py`, puis les trois générés doivent
-  suivre dans le même commit — `git status --porcelain` doit lister `index.md` **et** `index.html`,
-  `llms.txt`, `AGENTS.md`. Un second `build.py` ne doit plus rien changer (idempotence).
-  `index.md` + générés forment une unité atomique : une seule tâche active à la fois.
+- `index.md` et `AGENTS.md` restent **octet pour octet identiques**. Une seule tâche active dessus à la fois ; `git diff --no-index index.md AGENTS.md` doit être vide.
+- Aucune expérience inventée ; le CV fait autorité et la vérification se fait à la main depuis le 2026-11-17 (plus de `verify_facts.py`).
+- Chiffres avec période ; pas de tarif, téléphone, salaire ni date de disponibilité ; AWS est le cloud principal ; ne pas contacter la personne.
+- `index.html` reste un redirect statique de quelques lignes vers `./index.md`, sans build : l'URL racine doit continuer à répondre.
+- `.nojekyll` reste présent : c'est ce qui fait servir `index.md` en texte brut par Pages.
 
 ## Commandes de vérification
 
 ```powershell
-python scripts/build.py
-git status --porcelain          # index.md et les trois générés bougent ensemble
-python scripts/verify_facts.py ..\curriculum-vitae
-python scripts/check_links.py
+git diff --no-index index.md AGENTS.md
+git status --porcelain
+git diff --exit-code -- index.md AGENTS.md README.md index.html .nojekyll
 ```
 
-Le contrôle « diff vide » sur les quatre fichiers se fait **après le commit**, sur arbre propre :
-c'est le job `consistency`, pas une preuve de worker.
-
-Sur Windows, utiliser `python` : `python3` pointe vers l'alias WindowsApps.
+La dernière commande se lance **après commit**, sur arbre propre. Relire ensuite les faits dans `../curriculum-vitae` et ouvrir les liens à la main : il n'existe plus de porte automatique.
 
 ## Pièges connus
 
-- Éditer `llms.txt` ou `AGENTS.md` à la main donne un diff que `build.py` écrase au prochain
-  passage : la modification est perdue et la CI `consistency` échoue.
-- Un chiffre déplacé hors de sa période change le sens : garder la mention d'année collée au chiffre.
-- La ligne `last-modified` est estampillée par `build.py` depuis le dernier commit touchant
-  `index.md` : la modifier à la main ne tient pas.
-- La machine a `markdown 3.8.2`, la CI installe `markdown==3.7` : un rendu HTML vérifié en local peut
-  différer en CI (voir `generator`).
+- Corriger `AGENTS.md` sans corriger `index.md` : la copie locale diverge du profil publié.
+- Réintroduire un script de génération parce que la synchronisation est manuelle : ce serait réintroduire la mécanique supprimée.
+- Supprimer `index.html` en croyant que Pages servira le Markdown à la racine : sans fichier d'index, l'URL racine renvoie 404.
 
 ## Preuve attendue
 
-- `git diff --stat` + le diff de `index.md` et des trois générés.
-- `python scripts/build.py` deux fois : les trois générés identiques d'un passage à l'autre,
-  puis `verify_facts.py` → `OK`, `check_links.py` → `0 failing` : commandes avec code de sortie
-  et sortie. Le diff vide sur les quatre fichiers est vérifié après commit, par l'orchestrateur.
-- `gaps:` si le CV privé est absent, si le réseau manque pour les liens, ou si le rendu HTML n'a pas
-  été ouvert.
+- `git diff --stat` et le diff des fichiers du SCOPE.
+- `git diff --no-index index.md AGENTS.md` avec son code de sortie.
+- Faits et liens vérifiés à la main, ou déclarés dans `gaps:`.
 
 ## Fils ouverts
 

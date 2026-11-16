@@ -5,7 +5,7 @@ Deux domaines. `session` est le `sessionID` rendu par l'outil subagent : le repa
 | domain | session | last item | files in play | status |
 |---|---|---|---|---|
 | content |  |  | `index.md`, `AGENTS.md`, `README.md`, `index.html`, `.nojekyll` | idle |
-| agent-docs |  | SIMP-1 simplification du dépôt | `.orchestrator/**`, `.opencode/domains/**` | in_progress |
+| agent-docs | ses_e1966539affeAMf700bj0rCssA | SIMP-1 simplification du dépôt | `.orchestrator/**`, `.opencode/domains/**` | done |
 
 ## Historique des sessions
 

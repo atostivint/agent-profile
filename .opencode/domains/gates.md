@@ -24,6 +24,9 @@
 - Le job `drift` saute sans `CV_REPO_TOKEN` : ne pas lire ce saut comme une vérification réussie.
   La vérification de fond se fait localement avec `verify_facts.py`.
 - La CI installe `markdown==3.7` : toute modification de `check.yml` doit le rester ou le justifier.
+- La CI **n'impose pas** la date d'estampille : `build.py` la prend du dernier commit touchant
+  `index.md`. Ajouter `--date "$(git log -1 --format=%cs)"` au workflow fait échouer `consistency`
+  sur tout commit qui ne touche pas `index.md` (CI-1, 2026-11-16).
 - Un échec de porte bloque la tâche : on ne « passe » pas une porte en l'assouplissant.
 
 ## Commandes de vérification

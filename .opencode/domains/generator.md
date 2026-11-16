@@ -42,7 +42,8 @@ Sur Windows, utiliser `python` : `python3` pointe vers l'alias WindowsApps.
   version locale avec `python -c "import markdown; print(markdown.__version__)"` (sortie attendue
   `3.8.2`), la confronter au `markdown==3.7` de la CI, puis régénérer et comparer le rendu avant de
   conclure.
-- `--date` écrase l'estampille : la CI passe `git log -1 --format=%cs`. Un `--date` local divergent
+- `--date` écrase l'estampille : la CI ne l'utilise plus (correctif CI-1, 2026-11-16) et laisse
+  `build.py` prendre la date du dernier commit touchant `index.md`. Un `--date` local divergent
   laisse un diff sur `index.md` et fait échouer `consistency`.
 - `SITE_URL` sert aux URL absolues : le changer sans câbler le domaine custom casse les liens.
 

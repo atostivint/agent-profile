@@ -20,6 +20,10 @@ Une ligne par arbitrage, datée. Le pourquoi est aussi important que le choix.
   `generator`, `gates`, `edge`, `agent-docs`). `index.md` et ses trois fichiers générés forment une
   unité atomique : une seule tâche active dessus à la fois, jamais deux `scripts/build.py` en
   parallèle, sinon les dérivés divergent.
+- **2026-11-16 — la CI n'estampille pas la date** : `check.yml` passait `--date "$(git log -1
+  --format=%cs)"`, soit la date de HEAD, alors que `build.py` prend celle du dernier commit touchant
+  `index.md`. Tout commit hors contenu (`61beed8`, run `43973960585`) recevait une date différente et
+  `consistency` échouait. La CI n'a plus de `--date` : `build.py` reste la seule source de la date.
 - **2026-11-16 — preuve avant/après commit** : un worker ne peut pas prouver un
   `git diff --exit-code` vide sur `index.md` + générés, puisque `index.md` est modifié par
   construction pendant la tâche. Sa preuve est l'**idempotence** : `build.py` deux fois de suite,

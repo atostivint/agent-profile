@@ -9,7 +9,7 @@ tâche active, dans le domaine `content`.
 |---|---|---|---|---|
 | content |  |  | `index.md`, `index.html`, `llms.txt`, `AGENTS.md` (unité atomique) | idle |
 | generator |  |  | `scripts/build.py`, `assets/fonts/**` | idle |
-| gates |  |  | `scripts/verify_facts.py`, `scripts/check_links.py`, `.github/workflows/check.yml` | idle |
+| gates | ses_e196c61d3ffe2fLevsmIcMwHzp | CI-1 date d'estampille | `scripts/verify_facts.py`, `scripts/check_links.py`, `.github/workflows/check.yml` | done |
 | edge |  |  | `worker/content-negotiation.js` | idle |
 | agent-docs | ses_e197807efffehZ6UR7McNydL21 | ORCH-1 scaffolding + correctifs de revue | `README.md`, `.orchestrator/**`, `.opencode/domains/**` | done |
 

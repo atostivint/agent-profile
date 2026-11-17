@@ -215,8 +215,8 @@ there rather than trusting this file.
 
 | Years | Role | Organization |
 | ----- | ---- | ------------ |
-| 2020 to 2025 | Cloud Architect, then Senior Cloud Architect (from 2022) | DoiT International, France (remote) |
 | 2025 to 2026 | Self-directed: homelab (k3s, Flux CD, AI agents) | Independent |
+| 2020 to 2025 | Cloud Architect, then Senior Cloud Architect (from 2022) | DoiT International, France (remote) |
 | 2017 to 2020 | Cloud Systems Developer | Cloudreach, Paris (hybrid) |
 | 2014 to 2017 | Integration Engineer (apprentice) | Exaprobe-Econocom, Rennes |
 
@@ -256,7 +256,7 @@ Please include, in the first message:
 - Email: <alexandre@tostivint.bzh>
 - LinkedIn: <https://www.linkedin.com/in/alexandretostivint/>
 - GitHub: <https://github.com/atostivint>
-- Personal site (CV, not a portfolio): <https://alexandre.tostivint.bzh/>
+- Blog: <https://alexandre.tostivint.bzh/>
 - CV: <https://cv.alexandre.tostivint.bzh/resume.pdf>
 - Questions page: <https://ask.alexandre.tostivint.bzh>
 

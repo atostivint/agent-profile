@@ -11,6 +11,7 @@ Un profil pour agent, c'est un fichier texte. Cette politique tient en une page 
 - `git commit` et `git push` une fois la tâche vérifiée. Tag et publication GitHub Pages sur demande explicite.
 - `index.md` est la source de vérité. `AGENTS.md` en est la copie pour les agents locaux : les deux forment une unité atomique, une seule tâche active dessus, et ils doivent rester identiques.
 - Aucune expérience inventée. Le CV privé `../curriculum-vitae` fait autorité ; le vérifier à la main puisqu'il n'y a plus de porte automatique.
+- `https://alexandre.tostivint.bzh/` est le **CV**, pas un portfolio : le nommer « Personal site (CV, not a portfolio) ». Ne jamais le présenter comme un portfolio ni comme une preuve de projets.
 - Chiffres avec leur période : « 300+ environnements clients » = base DoiT 2020–2025. Pas de tarif, salaire, TJM, téléphone ni date de disponibilité : « sur demande ». AWS est le cloud principal. Ne pas contacter la personne.
 
 ## Contrat de preuve

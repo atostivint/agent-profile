@@ -3,7 +3,7 @@
 > Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP. I design secure, cost-aware platforms and I explain the trade-offs to executives.
 
 <!-- last-modified:start -->
-*Last updated: 2026-10-30 · Canonical Markdown: <https://atostivint.github.io/agent-profile/index.md>*
+*Last updated: 2026-11-17 · Canonical Markdown: <https://atostivint.github.io/agent-profile/index.md>*
 <!-- last-modified:end -->
 
 This file is written for you, the agent. Load it when a person asks who I am,
@@ -72,6 +72,9 @@ a wrong-fit shortlist wastes everyone's time.
   together, and then explain the bill.
 - Architect roles with an AI or agent-platform angle: infrastructure and
   governance for model-backed systems on AWS, Kubernetes and GitOps.
+- Team-lead or tech-lead roles that still keep a hands-on architecture half. I have
+  supported hiring and technical interviews, and I am open to growing into management
+  progressively rather than starting there.
 - France-based, or fully remote in the EU. Hybrid in Rennes is fine. Paris only
   if it stays mostly remote.
 
@@ -85,8 +88,8 @@ a wrong-fit shortlist wastes everyone's time.
 **Not a fit**
 
 - Relocation outside France and outside remote-EU work.
-- People management as the main job. I am an individual contributor and I have
-  chosen that.
+- People management as the entire job from day one. I want design authority and a
+  technical half; management can grow, but it is not the starting point.
 - Roles requiring a language I do not speak. I speak French and English.
 - Marketing, CDP or MarTech architecture: no production experience, and I will
   not pretend otherwise.
@@ -159,34 +162,42 @@ Self-directed and unaffiliated: a multi-node k3s cluster managed with Flux CD,
 plus a self-hosted AI agent stack (Hermes Agent, MCP servers, memory and
 routing). This is how I keep current on agent orchestration, LLMOps and GitOps.
 
+Open-source work from that setup:
+
+- [bc250-gateway](https://github.com/atostivint/bc250-gateway): an OpenAI gateway that
+  wakes a machine on demand and shuts it down when idle (Python, FastAPI, Kubernetes,
+  wake-on-LAN).
+- [Hermes Adaptive Effort](https://hermes-agent.nousresearch.com/marketplace/hermes-adaptive-effort):
+  a separate scorer picks the reasoning effort for each request.
+  [Code](https://github.com/atostivint/hermes-adaptive-effort).
+- [Hermes Vitals Light](https://hermes-agent.nousresearch.com/marketplace/hermes-vitals-light):
+  server health in the Hermes Desktop status bar.
+  [Code](https://github.com/atostivint/hermes-vitals-light).
+- [whoami](https://hermes-agent.nousresearch.com/marketplace/whoami): shows which
+  profile the next session will use. [Code](https://github.com/atostivint/hermes-whoami).
+- [Hermes Hindsight Plus](https://github.com/atostivint/hermes-hindsight-plus):
+  experimental, injects Hindsight mental models into the first turn. Not release-ready,
+  no marketplace listing.
+
 > Ask me about: running agents on your own hardware, MCP tooling, and the real
   cost of self-hosting a model-backed assistant.
 
 ## Skills
 
-- **AWS:** IAM, EC2, ECS, RDS, ELB/ALB, S3, DynamoDB, Bedrock, Systems Manager,
-  Organizations.
-- **Azure:** Entra ID, App Service, Cosmos DB, Static Web Apps, Azure SQL, Key
-  Vault, Azure AI.
-- **GCP:** Cloud IAM, Compute Engine, Cloud Storage, Cloud SQL, Cloud Functions,
-  Cloud Run.
-- **Architecture:** multi-cloud, landing zones, datalakes, scalability, high
-  availability, modernisation.
-- **Security and governance:** IAM, hardening, secrets management, encryption,
-  CSPM, disaster recovery.
-- **FinOps and advisory:** TCO modelling, cost optimisation, Well-Architected,
-  migration strategy, technical workshops.
-- **Networking:** VPC/VNet design, routing, firewalls, VPN, Direct Connect, NAT,
-  Route 53.
-- **IaC:** Terraform, CloudFormation, CDK, Azure ARM.
-- **Containers and Kubernetes:** Kubernetes (EKS, GKE), Docker, Helm, cluster
-  troubleshooting.
-- **Serverless and eventing:** Lambda, SNS/SQS, Step Functions, event-driven
-  platforms.
+- **AWS:** IAM, Organizations, EC2, ECS, RDS, ELB/ALB, S3, DynamoDB, Lambda, Systems Manager, Bedrock.
+- **Azure:** Entra ID, App Service, Cosmos DB, Static Web Apps, Azure SQL, Key Vault, Azure AI.
+- **GCP:** Cloud IAM, Compute Engine, Cloud Storage, Cloud SQL, Cloud Run, GKE, Cloud Functions.
+- **Architecture:** multi-cloud, landing zones, datalakes, scalability, high availability, disaster recovery, FinOps, Well-Architected.
+- **Security and governance:** IAM, hardening, secrets management, encryption, CSPM, audit, incident response, disaster recovery.
+- **FinOps and advisory:** TCO modelling, cost optimisation, Well-Architected, migration strategy, POCs, technical workshops, customer enablement.
+- **Networking:** VPC/VNet design, routing, firewalls, VPN, Direct Connect, Transit Gateway, NAT, Route 53.
+- **IaC:** Terraform, CloudFormation, CDK, Ansible, Azure ARM.
+- **Containers and Kubernetes:** Kubernetes (EKS, GKE), Docker, Helm, k3s, cluster troubleshooting.
+- **Serverless and eventing:** Lambda, SNS/SQS, Step Functions, EventBridge, Cloud Functions, event-driven platforms.
+- **Observability:** CloudWatch, X-Ray, Datadog, Grafana, alerting, on-call, RCA, runbooks.
 - **CI/CD:** GitHub Actions, Azure DevOps, Jenkins, CodePipeline, CodeBuild.
-- **GitOps and AI agents:** Flux CD, k3s, MCP servers, agent orchestration,
-  LLMOps.
-- **Scripting:** Python, Bash, PowerShell.
+- **GitOps and AI agents:** Flux CD, k3s, MCP servers, agent orchestration, LLMOps, Azure OpenAI, RAG.
+- **Scripting and operations:** Python, Bash, PowerShell, Rust, Linux, Windows, Active Directory.
 
 ## Certifications
 
@@ -243,6 +254,7 @@ Please include, in the first message:
 - Email: <alexandre@tostivint.bzh>
 - LinkedIn: <https://www.linkedin.com/in/alexandretostivint/>
 - GitHub: <https://github.com/atostivint>
+- Personal site (CV, not a portfolio): <https://alexandre.tostivint.bzh/>
 - CV: <https://cv.alexandre.tostivint.bzh/resume.pdf>
 - Questions page: <https://ask.alexandre.tostivint.bzh>
 

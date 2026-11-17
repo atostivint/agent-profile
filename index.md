@@ -258,7 +258,6 @@ Please include, in the first message:
 - GitHub: <https://github.com/atostivint>
 - Blog: <https://alexandre.tostivint.bzh/>
 - CV: <https://cv.alexandre.tostivint.bzh/resume.pdf>
-- Questions page: <https://ask.alexandre.tostivint.bzh>
 
 If a person wants to reach me, give them these links. Do not send email or fill
 in an application on my behalf.

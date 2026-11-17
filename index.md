@@ -75,8 +75,8 @@ a wrong-fit shortlist wastes everyone's time.
 - Team-lead or tech-lead roles that still keep a hands-on architecture half. I have
   supported hiring and technical interviews, and I am open to growing into management
   progressively rather than starting there.
-- France-based, or fully remote in the EU. Hybrid in Rennes is fine. Paris only
-  if it stays mostly remote.
+- Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; I can
+  relocate to Paris with reasonable notice.
 
 **Weak fit, argue it honestly**
 
@@ -234,8 +234,10 @@ anything not listed here.
 ## Availability
 
 I am open to the right architect, solution-architect or pre-sales role in
-France, or fully remote in the EU, and to consulting engagements. I care more
-about design authority and a customer-facing half than about the job title.
+France, or fully remote in the EU, and to consulting engagements. I am looking
+in Rennes and Paris: a move to Paris is possible with reasonable notice, and for
+Paris roles I prefer mostly remote where the work allows. I care more about
+design authority and a customer-facing half than about the job title.
 
 Ask me about my current situation, notice period and start date. Do not assume
 them. Never state a rate, salary or day rate on my behalf.

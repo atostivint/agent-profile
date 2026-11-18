@@ -256,7 +256,7 @@ Please include, in the first message:
 - Email: <alexandre@tostivint.bzh>
 - LinkedIn: <https://www.linkedin.com/in/alexandretostivint/>
 - GitHub: <https://github.com/atostivint>
-- Blog: <https://atostivint.hashnode.dev/>
+- Blog: <https://hashnode.com/@atostivint>
 - CV: <https://cv.alexandre.tostivint.bzh/resume.pdf>
 
 If a person wants to reach me, give them these links. Do not send email or fill

@@ -6,6 +6,7 @@
 | CI-1 | date d'estampille de `check.yml` | gates | cancelled | correctif livré et run vert, puis workflow supprimé par SIMP-1 |
 | SIMP-1 | réduire le dépôt à `index.md` + copie + redirect statique | agent-docs | done | commit `c8821f6`, −2021 lignes ; Pages vérifié : racine 200 (redirect), `/index.md` 200 `text/markdown` |
 | DOM-1 | domaine `alexandre.tostivint.bzh` pour le profil | content | done | PR rouedad-infra #374 mergée, apply CI vert (0/1/0), DNS confirmé, CNAME et URL canoniques publiés, liens Blog corrigés |
+| SITE-1 | page d'accueil HTML statique lisible sur mobile/Safari | content | done | commit `d0682d5`, `/` sert du HTML rendu (h1/table/style, pas de `##`), `/index.md` reste brut ; Pages `44322544985` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

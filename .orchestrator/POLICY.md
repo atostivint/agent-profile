@@ -9,7 +9,8 @@ Un profil pour agent, c'est un fichier texte. Cette politique tient en une page 
 - Réponses en français, courtes, 8 lignes maximum.
 - Le brief liste des fichiers exacts. Aucun fichier hors liste ne bouge.
 - `git commit` et `git push` une fois la tâche vérifiée. Tag et publication GitHub Pages sur demande explicite.
-- `index.md` est la source de vérité. `AGENTS.md` en est la copie pour les agents locaux : les deux forment une unité atomique, une seule tâche active dessus, et ils doivent rester identiques.
+- `index.md` est la source de vérité. `AGENTS.md` en est la copie pour les agents locaux ; `index.html` est la page statique lisible rendue depuis `index.md`. Les trois forment une unité atomique : une seule tâche active, `index.md` = `AGENTS.md` octet pour octet, et `index.html` reflète le même contenu. Pas de build versionné : la resynchronisation est manuelle ou confiée à l'agent Hermes de l'utilisateur.
+- `/` sert le HTML aux humains (Safari, mobile) ; `/index.md` reste le Markdown brut pour les agents, annoncé par `<link rel="alternate" type="text/markdown">`.
 - Aucune expérience inventée. Le CV privé `../curriculum-vitae` fait autorité ; le vérifier à la main puisqu'il n'y a plus de porte automatique.
 - `https://alexandre.tostivint.bzh/` est un **blog**, pas un CV ni un portfolio : le nommer « Blog ». Le CV public reste `https://cv.alexandre.tostivint.bzh/resume.pdf`. `alexandre.osyvan.bzh` ne résout pas.
 - Chiffres avec leur période : « 300+ environnements clients » = base DoiT 2020–2025. Pas de tarif, salaire, TJM, téléphone ni date de disponibilité : « sur demande ». AWS est le cloud principal. Ne pas contacter la personne.

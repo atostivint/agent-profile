@@ -4,7 +4,7 @@
 
 - `index.md` — le profil, seule source de vérité.
 - `AGENTS.md` — sa copie pour les agents qui lisent la racine du dépôt.
-- `README.md`, `index.html` (redirect statique), `.nojekyll`.
+- `README.md`, `index.html` (page statique rendue depuis `index.md`, sans build versionné), `.nojekyll`.
 
 ## Ne possède pas
 
@@ -16,7 +16,7 @@
 - `index.md` et `AGENTS.md` restent **octet pour octet identiques**. Une seule tâche active dessus à la fois ; `git diff --no-index index.md AGENTS.md` doit être vide.
 - Aucune expérience inventée ; le CV fait autorité et la vérification se fait à la main depuis le 2026-11-17 (plus de `verify_facts.py`).
 - Chiffres avec période ; pas de tarif, téléphone, salaire ni date de disponibilité ; AWS est le cloud principal ; ne pas contacter la personne.
-- `index.html` reste un redirect statique de quelques lignes vers `./index.md`, sans build : l'URL racine doit continuer à répondre.
+- `index.html` doit rester une page statique autonome : CSS intégré, aucune dépendance `assets/` ni CDN, un `<link rel="alternate" type="text/markdown" href="/index.md">`. Elle est régénérée à la main depuis `index.md` : la modifier seule la fait diverger du profil.
 - `.nojekyll` reste présent : c'est ce qui fait servir `index.md` en texte brut par Pages.
 
 ## Commandes de vérification

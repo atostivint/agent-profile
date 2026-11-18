@@ -10,7 +10,7 @@ authoritative file is [`index.md`](index.md); everything else here is support.
 | ---- | ---- |
 | `index.md` | Single source of truth — the agent-facing profile. Edit this one. |
 | `AGENTS.md` | Local copy of `index.md`. Resynchronise by hand when the source changes. |
-| `index.html` | Static redirect from the site root to `./index.md`. No build. |
+| `index.html` | Static rendered page for humans, from `index.md`. No build; regenerate by hand. |
 | `.nojekyll` | Tells GitHub Pages to serve `index.md` raw as `text/markdown`. |
 | `README.md` | This file. |
 

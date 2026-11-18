@@ -1,7 +1,7 @@
 # agent-profile
 
 An agent-facing profile of Alexandre Tostivint, published as raw Markdown on
-GitHub Pages: <https://atostivint.github.io/agent-profile/>. The canonical,
+GitHub Pages: <https://alexandre.tostivint.bzh/>. The canonical,
 authoritative file is [`index.md`](index.md); everything else here is support.
 
 ## Files

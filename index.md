@@ -3,7 +3,7 @@
 > Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP. I design secure, cost-aware platforms and I explain the trade-offs to executives.
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-17 · Canonical Markdown: <https://atostivint.github.io/agent-profile/index.md>*
+*Last updated: 2026-11-17 · Canonical Markdown: <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 This file is written for you, the agent. Load it when a person asks who I am,
@@ -256,7 +256,7 @@ Please include, in the first message:
 - Email: <alexandre@tostivint.bzh>
 - LinkedIn: <https://www.linkedin.com/in/alexandretostivint/>
 - GitHub: <https://github.com/atostivint>
-- Blog: <https://alexandre.tostivint.bzh/>
+- Blog: <https://atostivint.hashnode.dev/>
 - CV: <https://cv.alexandre.tostivint.bzh/resume.pdf>
 
 If a person wants to reach me, give them these links. Do not send email or fill
@@ -264,4 +264,4 @@ in an application on my behalf.
 
 ## Citing this page
 
-> Tostivint, Alexandre. *Alexandre Tostivint*. <https://atostivint.github.io/agent-profile/index.md>
+> Tostivint, Alexandre. *Alexandre Tostivint*. <https://alexandre.tostivint.bzh/index.md>

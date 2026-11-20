@@ -10,6 +10,7 @@
 | UI-1 | correctifs de la critique Impeccable (18/32) | content | done | commits `ded7c2d` + `743f4fa` ; mojibakes → entités, prose system-ui 16 px, métadonnées agrandies, nav et a11y ; détecteur 3 → 1 avertissement (faux positif `.util`) ; Pages `44326379397` vert |
 | CONTENT-2 | aplatir index.md, ajouter faits CV et positionnement agentique, date + commit | content | done | commits `f8b27bd` + `2d10188` ; HTML régénéré, Pages `44721181574` vert, rendu vérifié via navigateur |
 | TEXT-1 | critique de fond du texte (destinataires mélangés, redites) | content | done | commits `7c58d60` + `7327902` + `ffc560b` ; règles déplacées en annexe, 3 callouts, contradictions et redites corrigées ; Pages `44742489324` vert, HTML live vérifié |
+| PLUG-1 | ajouter Hermes Compute Priority aux listes de plugins | content | done | vérifié marketplace 200 et dépôt public non-fork ; commits `027ca67` + `0845aa1` (profil) et `466acbc` (README GitHub) ; Pages `44780173203` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

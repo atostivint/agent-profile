@@ -3,7 +3,7 @@
 > Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS (primary), Azure and GCP between 2020 and 2025. I design secure, cost-aware platforms and I make the trade-offs explicit to executives.
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-20 · Commit: 7327902 · Canonical Markdown: <https://alexandre.tostivint.bzh/index.md>*
+*Last updated: 2026-11-20 · Commit: 027ca67 · Canonical Markdown: <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 ## About me

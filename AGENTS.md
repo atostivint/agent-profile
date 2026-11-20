@@ -97,6 +97,7 @@ Open-source work from that setup:
 - [Hermes Adaptive Effort](https://hermes-agent.nousresearch.com/marketplace/hermes-adaptive-effort): a separate scorer picks the reasoning effort for each request. [Code](https://github.com/atostivint/hermes-adaptive-effort).
 - [Hermes Vitals Light](https://hermes-agent.nousresearch.com/marketplace/hermes-vitals-light): server health in the Hermes Desktop status bar. [Code](https://github.com/atostivint/hermes-vitals-light).
 - [whoami](https://hermes-agent.nousresearch.com/marketplace/whoami): shows which profile the next session will use. [Code](https://github.com/atostivint/hermes-whoami).
+- [Hermes Compute Priority](https://hermes-agent.nousresearch.com/marketplace/hermes-compute-priority): keeps the Desktop connection ahead of isolated turn workers on CPU-constrained hosts. [Code](https://github.com/atostivint/hermes-compute-priority).
 - [Hermes Hindsight Plus](https://github.com/atostivint/hermes-hindsight-plus): experimental, injects Hindsight mental models into the first turn. Not release-ready, no marketplace listing.
 
 ## Skills

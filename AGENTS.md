@@ -29,7 +29,7 @@ Blunt fit check: strong fit, weak fit, not a fit.
 - Roles where someone has to make Kubernetes, Terraform and CI/CD behave together, and then explain the bill.
 - Architect roles with an AI or agent-platform angle: infrastructure and governance for model-backed systems on AWS, Kubernetes and GitOps.
 - Team-lead or tech-lead roles that still keep a hands-on architecture half. I have supported hiring and technical interviews, and I am open to growing into management progressively rather than starting there.
-- Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; I can relocate to Paris with reasonable notice.
+- Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; a move to Paris is possible if the timing works.
 
 **Weak fit, argue it honestly**
 

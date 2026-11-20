@@ -3,7 +3,7 @@
 > Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS, Azure and GCP. I design secure, cost-aware platforms and I explain the trade-offs to executives.
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-20 · Commit: REFERENCE · Canonical Markdown: <https://alexandre.tostivint.bzh/index.md>*
+*Last updated: 2026-11-20 · Commit: f8b27bd · Canonical Markdown: <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 This file is written for you, the agent. Load it when a person asks who I am, what I have built, whether I fit a role, or what I charge. It is short on purpose: facts, rules for using them, and links to the source for everything else.

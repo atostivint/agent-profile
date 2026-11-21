@@ -21,32 +21,6 @@ I'm looking for my next senior architect role: building the technologies of tomo
 
 What I actually do, in one sentence: *I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.* My next role should put that same judgement to work on AWS first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG).
 
-## Fit check
-
-Blunt fit check: strong fit, weak fit, not a fit.
-
-**Strong fit**
-
-- Cloud architect, solution architect, platform or infrastructure architect.
-- AWS-first, multi-cloud second: landing zones, governance, security, FinOps, migration and modernisation.
-- Architect roles with a pre-sales or customer-facing half. I ran technical workshops, cost models and solution strategy with sales for years.
-- Roles where someone has to make Kubernetes, Terraform and CI/CD behave together, and then explain the bill.
-- Architect roles with an AI or agent-platform angle: infrastructure and governance for model-backed systems on AWS, Kubernetes and GitOps.
-- Team-lead or tech-lead roles that still keep a hands-on architecture half. I have supported hiring and technical interviews, and I am open to growing into management progressively rather than starting there.
-- Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; a move to Paris is possible if the timing works.
-
-**Weak fit, argue it honestly**
-
-- Azure-first roles with no AWS content: Azure is my second cloud.
-- Engineering roles titled architect that are really ticket-driven implementation with no design authority.
-
-**Not a fit**
-
-- Relocation outside France and outside remote-EU work.
-- People management as the entire job from day one.
-- Roles requiring a language I do not speak. I speak French and English.
-- Marketing, CDP or MarTech architecture: no production experience.
-
 ## Selected work
 
 ### Career break: platform engineering and self-hosted infrastructure
@@ -147,6 +121,33 @@ All six current — verify with the issuer (links below).
 
 - **National School of Applied Science and Technology (ENSSAT)**, 2014 to 2017, engineering degree (work-study), multimedia and network computing.
 - **Institut Universitaire Technologique de Saint-Malo**, 2012 to 2014, university diploma in technology (DUT), networks and telecommunications.
+
+<a id="fit-check"></a>
+## Where I fit
+
+Blunt fit check: strong fit, weak fit, not a fit.
+
+**Strong fit**
+
+- Cloud architect, solution architect, platform or infrastructure architect.
+- AWS-first, multi-cloud second: landing zones, governance, security, FinOps, migration and modernisation.
+- Architect roles with a pre-sales or customer-facing half. I ran technical workshops, cost models and solution strategy with sales for years.
+- Roles where someone has to make Kubernetes, Terraform and CI/CD behave together, and then explain the bill.
+- Architect roles with an AI or agent-platform angle: infrastructure and governance for model-backed systems on AWS, Kubernetes and GitOps.
+- Team-lead or tech-lead roles that still keep a hands-on architecture half. I have supported hiring and technical interviews, and I am open to growing into management progressively rather than starting there.
+- Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; a move to Paris is possible if the timing works.
+
+**Weak fit, argue it honestly**
+
+- Azure-first roles with no AWS content: Azure is my second cloud.
+- Engineering roles titled architect that are really ticket-driven implementation with no design authority.
+
+**Not a fit**
+
+- Relocation outside France and outside remote-EU work.
+- People management as the entire job from day one.
+- Roles requiring a language I do not speak. I speak French and English.
+- Marketing, CDP or MarTech architecture: no production experience.
 
 ## Availability
 

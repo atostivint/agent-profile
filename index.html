@@ -229,6 +229,9 @@
   /* ---- profile polish ------------------------------------------------ */
   .win .body p.intro:first-of-type { font-weight: 600; color: var(--head); }
   img.cert-logo { height: 16px; width: auto; vertical-align: -3px; margin-right: 7px; padding: 2px 4px; background: #ffffff; border-radius: 3px; }
+  details.agent-notes { margin-top: 2.4rem; border: 1px dashed var(--line); border-radius: 8px; padding: 10px 14px; }
+  details.agent-notes summary { cursor: pointer; color: var(--dim); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  details.agent-notes[open] summary { margin-bottom: .8rem; }
   .win .body h2 + h3 { border-top: 0; padding-top: .4rem; }
   .lang[hidden] { display: none; }
   .lang-switch { display: flex; gap: 2px; margin: 6px 0 10px; }
@@ -252,7 +255,7 @@
     <label class="sections-label" for="sections-toggle">Sections &#9662;</label>
     <nav aria-label="Sections">
       <a href="#about-me">About me</a>
-      <a href="#fit-check">Fit check</a>
+      <a href="#fit-check">Where I fit</a>
       <a href="#selected-work">Selected work</a>
       <a href="#open-source-projects">Open source</a>
       <a href="#skills">Skills</a>
@@ -300,30 +303,6 @@
 <li>French native, English C1.</li>
 </ul>
 <p>What I actually do, in one sentence: <em>I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.</em> My next role should put that same judgement to work on AWS first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG).</p>
-<h2 id="fit-check">Fit check</h2>
-<p>Blunt fit check: strong fit, weak fit, not a fit.</p>
-<p><strong>Strong fit</strong></p>
-<ul>
-<li>Cloud architect, solution architect, platform or infrastructure architect.</li>
-<li>AWS-first, multi-cloud second: landing zones, governance, security, FinOps, migration and modernisation.</li>
-<li>Architect roles with a pre-sales or customer-facing half. I ran technical workshops, cost models and solution strategy with sales for years.</li>
-<li>Roles where someone has to make Kubernetes, Terraform and CI/CD behave together, and then explain the bill.</li>
-<li>Architect roles with an AI or agent-platform angle: infrastructure and governance for model-backed systems on AWS, Kubernetes and GitOps.</li>
-<li>Team-lead or tech-lead roles that still keep a hands-on architecture half. I have supported hiring and technical interviews, and I am open to growing into management progressively rather than starting there.</li>
-<li>Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; a move to Paris is possible if the timing works.</li>
-</ul>
-<p><strong>Weak fit, argue it honestly</strong></p>
-<ul>
-<li>Azure-first roles with no AWS content: Azure is my second cloud.</li>
-<li>Engineering roles titled architect that are really ticket-driven implementation with no design authority.</li>
-</ul>
-<p><strong>Not a fit</strong></p>
-<ul>
-<li>Relocation outside France and outside remote-EU work.</li>
-<li>People management as the entire job from day one.</li>
-<li>Roles requiring a language I do not speak. I speak French and English.</li>
-<li>Marketing, CDP or MarTech architecture: no production experience.</li>
-</ul>
 <h2 id="selected-work">Selected work</h2>
 <h3 id="career-break-platform-engineering-and-self-hosted-infrastructure">Career break: platform engineering and self-hosted infrastructure</h3>
 <p><em>Independent · May 2025 to Present</em></p>
@@ -428,6 +407,31 @@
 <li><strong>National School of Applied Science and Technology (ENSSAT)</strong>, 2014 to 2017, engineering degree (work-study), multimedia and network computing.</li>
 <li><strong>Institut Universitaire Technologique de Saint-Malo</strong>, 2012 to 2014, university diploma in technology (DUT), networks and telecommunications.</li>
 </ul>
+<a id="fit-check"></a>
+<h2>Where I fit</h2>
+<p>Blunt fit check: strong fit, weak fit, not a fit.</p>
+<p><strong>Strong fit</strong></p>
+<ul>
+<li>Cloud architect, solution architect, platform or infrastructure architect.</li>
+<li>AWS-first, multi-cloud second: landing zones, governance, security, FinOps, migration and modernisation.</li>
+<li>Architect roles with a pre-sales or customer-facing half. I ran technical workshops, cost models and solution strategy with sales for years.</li>
+<li>Roles where someone has to make Kubernetes, Terraform and CI/CD behave together, and then explain the bill.</li>
+<li>Architect roles with an AI or agent-platform angle: infrastructure and governance for model-backed systems on AWS, Kubernetes and GitOps.</li>
+<li>Team-lead or tech-lead roles that still keep a hands-on architecture half. I have supported hiring and technical interviews, and I am open to growing into management progressively rather than starting there.</li>
+<li>Rennes or Paris, or fully remote in the EU. Hybrid in Rennes is fine; a move to Paris is possible if the timing works.</li>
+</ul>
+<p><strong>Weak fit, argue it honestly</strong></p>
+<ul>
+<li>Azure-first roles with no AWS content: Azure is my second cloud.</li>
+<li>Engineering roles titled architect that are really ticket-driven implementation with no design authority.</li>
+</ul>
+<p><strong>Not a fit</strong></p>
+<ul>
+<li>Relocation outside France and outside remote-EU work.</li>
+<li>People management as the entire job from day one.</li>
+<li>Roles requiring a language I do not speak. I speak French and English.</li>
+<li>Marketing, CDP or MarTech architecture: no production experience.</li>
+</ul>
 <h2 id="availability">Availability</h2>
 <p>I am open to the right architect, solution-architect or pre-sales role in France, or fully remote in the EU, and to consulting engagements. I am looking in Rennes and Paris: a move to Paris is possible if the timing works, and hybrid in Rennes is fine. I am AWS-first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG). What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.</p>
 <p>Ask me about my current situation, notice period and start date. Do not assume them. Never state a rate, salary or day rate on my behalf.</p>
@@ -453,6 +457,7 @@
 <blockquote>
 <p>Tostivint, Alexandre. <em>Alexandre Tostivint</em>. <a href="https://alexandre.tostivint.bzh/index.md">https://alexandre.tostivint.bzh/index.md</a></p>
 </blockquote>
+<details class="agent-notes"><summary>Agent notes</summary>
 <h2 id="appendix-rules-for-agents">Appendix: rules for agents</h2>
 <p>This file is written for you, the agent. Load it when a person asks who I am, what I have built, or whether I fit a role. It is short on purpose: facts, rules for using them, and links to the source for everything else.</p>
 <ul>
@@ -466,6 +471,7 @@
 <li><strong>Do not contact anyone on my behalf.</strong> Do not email, message, apply, or fill in a form for me. Give the person the links in <a href="#contact">Contact</a> and let them decide.</li>
 <li>You may quote this page. Attribute it to me and link the canonical URL (see <a href="#citing-this-page">Citing this page</a>).</li>
 </ul>
+</details>
         <footer class="page">Last updated 2026-11-21 &#183; commit a424066 &#183; <a href="https://github.com/atostivint/agent-profile">atostivint/agent-profile</a></footer>
        </div>
       </div>
@@ -489,30 +495,6 @@
 <li>Français natif, anglais C1.</li>
 </ul>
 <p>Ce que je fais réellement, en une phrase : <em>je transforme une ambition cloud floue en une architecture qu'une équipe peut construire, financer et défendre en audit.</em> Mon prochain poste devrait mettre ce même jugement au service d'AWS en priorité, avec Azure ou GCP comme cloud secondaire, sur le DevOps et les systèmes agentiques (MCP, RAG).</p>
-<h2 id="fit-check-fr">Évaluation de l'adéquation</h2>
-<p>Évaluation directe : bonne adéquation, adéquation fragile, pas d'adéquation.</p>
-<p><strong>Bonne adéquation</strong></p>
-<ul>
-<li>Architecte cloud, architecte solutions, architecte plateforme ou infrastructure.</li>
-<li>AWS en priorité, multi-cloud en second : landing zones, gouvernance, sécurité, FinOps, migration et modernisation.</li>
-<li>Postes d'architecte avec une part avant-vente ou en contact client. J'ai animé des ateliers techniques, des modèles de coûts et une stratégie de solutions avec les équipes commerciales pendant des années.</li>
-<li>Postes où quelqu'un doit faire coexister Kubernetes, Terraform et la CI/CD, puis expliquer la facture.</li>
-<li>Postes d'architecte avec une dimension IA ou plateforme d'agents : infrastructure et gouvernance de systèmes adossés à des modèles sur AWS, Kubernetes et GitOps.</li>
-<li>Postes de lead technique ou lead d'équipe qui conservent une part d'architecture opérationnelle. J'ai accompagné le recrutement et les entretiens techniques, et je suis ouvert à évoluer progressivement vers le management plutôt qu'à commencer par là.</li>
-<li>Rennes ou Paris, ou entièrement en remote dans l'UE. Le hybride à Rennes convient ; un déménagement à Paris est possible si le calendrier le permet.</li>
-</ul>
-<p><strong>Adéquation fragile, à argumenter honnêtement</strong></p>
-<ul>
-<li>Postes Azure en priorité sans contenu AWS : Azure est mon cloud secondaire.</li>
-<li>Postes d'ingénierie intitulés architecte qui sont en réalité de la mise en œuvre pilotée par des tickets, sans autorité de conception.</li>
-</ul>
-<p><strong>Pas d'adéquation</strong></p>
-<ul>
-<li>Déménagement hors de France et hors du télétravail dans l'UE.</li>
-<li>Management d'équipe comme unique contenu du poste dès le premier jour.</li>
-<li>Postes exigeant une langue que je ne parle pas. Je parle français et anglais.</li>
-<li>Architecture marketing, CDP ou MarTech : aucune expérience en production.</li>
-</ul>
 <h2 id="selected-work-fr">Projets sélectionnés</h2>
 <h3 id="career-break-platform-engineering-and-self-hosted-infrastructure-fr">Pause de carrière : ingénierie de plateforme et infrastructure auto-hébergée</h3>
 <p><em>Indépendant · mai 2025 à présent</em></p>
@@ -617,6 +599,31 @@
 <li><strong>National School of Applied Science and Technology (ENSSAT)</strong>, 2014 à 2017, diplôme d'ingénieur (alternance), informatique multimédia et réseaux.</li>
 <li><strong>Institut Universitaire Technologique de Saint-Malo</strong>, 2012 à 2014, diplôme universitaire de technologie (DUT), réseaux et télécommunications.</li>
 </ul>
+<a id="fit-check-fr"></a>
+<h2>Où je me situe</h2>
+<p>Évaluation directe : bonne adéquation, adéquation fragile, pas d'adéquation.</p>
+<p><strong>Bonne adéquation</strong></p>
+<ul>
+<li>Architecte cloud, architecte solutions, architecte plateforme ou infrastructure.</li>
+<li>AWS en priorité, multi-cloud en second : landing zones, gouvernance, sécurité, FinOps, migration et modernisation.</li>
+<li>Postes d'architecte avec une part avant-vente ou en contact client. J'ai animé des ateliers techniques, des modèles de coûts et une stratégie de solutions avec les équipes commerciales pendant des années.</li>
+<li>Postes où quelqu'un doit faire coexister Kubernetes, Terraform et la CI/CD, puis expliquer la facture.</li>
+<li>Postes d'architecte avec une dimension IA ou plateforme d'agents : infrastructure et gouvernance de systèmes adossés à des modèles sur AWS, Kubernetes et GitOps.</li>
+<li>Postes de lead technique ou lead d'équipe qui conservent une part d'architecture opérationnelle. J'ai accompagné le recrutement et les entretiens techniques, et je suis ouvert à évoluer progressivement vers le management plutôt qu'à commencer par là.</li>
+<li>Rennes ou Paris, ou entièrement en remote dans l'UE. Le hybride à Rennes convient ; un déménagement à Paris est possible si le calendrier le permet.</li>
+</ul>
+<p><strong>Adéquation fragile, à argumenter honnêtement</strong></p>
+<ul>
+<li>Postes Azure en priorité sans contenu AWS : Azure est mon cloud secondaire.</li>
+<li>Postes d'ingénierie intitulés architecte qui sont en réalité de la mise en œuvre pilotée par des tickets, sans autorité de conception.</li>
+</ul>
+<p><strong>Pas d'adéquation</strong></p>
+<ul>
+<li>Déménagement hors de France et hors du télétravail dans l'UE.</li>
+<li>Management d'équipe comme unique contenu du poste dès le premier jour.</li>
+<li>Postes exigeant une langue que je ne parle pas. Je parle français et anglais.</li>
+<li>Architecture marketing, CDP ou MarTech : aucune expérience en production.</li>
+</ul>
 <h2 id="availability-fr">Disponibilité</h2>
 <p>Je suis ouvert au bon poste d'architecte, d'architecte solutions ou d'avant-vente en France, ou entièrement en remote dans l'UE, ainsi qu'à des missions de conseil. Je cherche à Rennes et à Paris : un déménagement à Paris est possible si le calendrier le permet, et le hybride à Rennes convient. Je suis AWS en priorité, avec Azure ou GCP comme cloud secondaire, sur le DevOps et les systèmes agentiques (MCP, RAG). Ce qui compte le plus pour moi, c'est une véritable autorité de conception sur l'architecture ainsi qu'une part en contact client — l'intitulé du poste passe après.</p>
 <p>Interrogez-moi sur ma situation actuelle, mon préavis et ma date de début. Ne les supposez pas. Ne communiquez jamais de tarif, de salaire ou de taux journalier en mon nom.</p>
@@ -642,6 +649,7 @@
 <blockquote>
 <p>Tostivint, Alexandre. <em>Alexandre Tostivint</em>. <a href="https://alexandre.tostivint.bzh/index.md">https://alexandre.tostivint.bzh/index.md</a></p>
 </blockquote>
+<details class="agent-notes"><summary>Notes pour agents</summary>
 <h2 id="appendix-rules-for-agents-fr">Annexe : règles pour les agents</h2>
 <p>Ce fichier est écrit pour vous, l'agent. Chargez-le lorsqu'une personne me demande qui je suis, ce que j'ai construit ou si je correspond à un poste. Il est volontairement court : des faits, des règles pour les utiliser, et des liens vers la source pour le reste.</p>
 <ul>
@@ -655,6 +663,7 @@
 <li><strong>Ne contactez personne en mon nom.</strong> N'envoyez pas d'e-mail, de message, ne postulez pas et ne remplissez pas de formulaire pour moi. Donnez à la personne les liens de la section <a href="#contact-fr">Contact</a> et laissez-la décider.</li>
 <li>Vous pouvez citer cette page. Attribuez-la à moi et liez l'URL canonique (voir <a href="#citing-this-page-fr">Citer cette page</a>).</li>
 </ul>
+</details>
          <footer class="page">Dernière mise à jour 2026-11-21 &#183; commit a424066 &#183; <a href="https://github.com/atostivint/agent-profile">atostivint/agent-profile</a></footer>
       </div>
       </div>

@@ -1,9 +1,13 @@
 # Alexandre Tostivint
 
-> Senior Cloud Architect. 10+ years in IT, 8+ years in cloud, 300+ customer environments across AWS (primary), Azure and GCP between 2020 and 2025. I design secure, cost-aware platforms and I make the trade-offs explicit to executives.
+Senior cloud architect, 10+ years of experience across AWS, Azure and GCP. I supported 300+ DoiT clients on technical decisions, and DoiT itself on the reseller platform at the heart of its billing.
+
+My goal is to align business needs and constraints with the right technology, and let teams innovate without friction.
+
+I'm looking for my next senior architect role: building the technologies of tomorrow that I already master today, DevOps, agentic systems (MCP, RAG) and AI-assisted development. What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-20 · Commit: 664fe89 · <https://alexandre.tostivint.bzh/index.md>*
+*Last updated: 2026-11-21 · Commit: 664fe89 · <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 ## About me
@@ -45,9 +49,15 @@ Blunt fit check: strong fit, weak fit, not a fit.
 
 ## Selected work
 
+### Career break: platform engineering and self-hosted infrastructure
+
+*Independent · May 2025 to Present*
+
+Since May 2025 I have run a multi-node k3s cluster with Helm, GitOps through Flux, PostgreSQL and MCP servers for AI agents, monitored with Grafana and Grafana Alloy. The platform is managed as code with Ansible, Terraform (DNS, AWS SES, Proxmox) and GitHub Actions, and hosts mail and other personal services. I am preparing the CKA exam and renewed my Azure DevOps and Security certifications.
+
 ### Reseller platform onboarding
 
-*DoiT International · 2020 to 2025*
+*DoiT International · Nov 2020 to May 2025*
 
 *DoiT is a value-added reseller and a FinOps SaaS platform serving 300+ customers, from startups to large enterprises.*
 
@@ -55,7 +65,7 @@ I owned the onboarding process and the reseller platform integration that put 2K
 
 ### Security and governance at scale
 
-*DoiT International · 2020 to 2025*
+*DoiT International · Nov 2020 to May 2025*
 
 Designed secure multi-account AWS landing zones with Security Hub, Inspector and IAM Access Analyzer. Delivered 10+ AWS Well-Architected Reviews across EMEA driving remediation and cost optimisation, and served as AWS MAP subject matter expert for France and EMEA.
 
@@ -63,7 +73,7 @@ Designed secure multi-account AWS landing zones with Security Hub, Inspector and
 
 ### On-premises to AWS migration
 
-*DoiT International · 2020 to 2025*
+*DoiT International · Nov 2020 to May 2025*
 
 Led migration deliveries covering architecture, governance and cost optimisation for enterprise customers moving out of their own datacentres.
 
@@ -71,7 +81,7 @@ Led migration deliveries covering architecture, governance and cost optimisation
 
 ### CI/CD platform on Kubernetes and GCP
 
-*Cloudreach · 2019*
+*Cloudreach · Oct 2017 to Nov 2020*
 
 *Cloudreach was a cloud-native consultancy, working mainly with AWS and GCP.*
 
@@ -81,15 +91,11 @@ Designed and delivered a Jenkins-based CI/CD platform on Google Kubernetes Engin
 
 ### AWS landing zone and datalake governance
 
-*Cloudreach · 2018 to 2019*
+*Cloudreach · Oct 2017 to Nov 2020*
 
 Contributed within a 4-person team to an AWS Landing Zone for a multinational client: network, security, governance and datalake foundations as code, AWS Workspaces with Windows Server and Active Directory, and governance automation in Lambda, Step Functions, Systems Manager and Okta.
 
-### Career break: platform engineering and self-hosted infrastructure
-
-*Independent · May 2025 to present*
-
-Since May 2025 I have run a multi-node k3s cluster with Helm, GitOps through Flux, PostgreSQL and MCP servers for AI agents, monitored with Grafana and Grafana Alloy. The platform is managed as code with Ansible, Terraform (DNS, AWS SES, Proxmox) and GitHub Actions, and hosts mail and other personal services. I am preparing the CKA exam and renewed my Azure DevOps and Security certifications.
+## Open-source projects
 
 Open-source work from that setup:
 
@@ -132,9 +138,9 @@ All six current — verify with the issuer (links below).
 
 | Years | Role | Organization |
 | ----- | ---- | ------------ |
-| 2025 to present | Career break: platform engineering, k3s, Flux CD, AI agents | Independent |
-| 2020 to 2025 | Cloud Architect, then Senior Cloud Architect (from 2022) | DoiT International, France (remote) |
-| 2017 to 2020 | Cloud Systems Developer | Cloudreach, Paris (hybrid) |
+| May 2025 to Present | Career break: platform engineering, k3s, Flux CD, AI agents | Independent |
+| Nov 2020 to May 2025 | Cloud Architect, then Senior Cloud Architect (from 2022) | DoiT International, France (remote) |
+| Oct 2017 to Nov 2020 | Cloud Systems Developer | Cloudreach, Paris (hybrid) |
 | 2014 to 2017 | Integration Engineer (apprentice) | Exaprobe-Econocom, Rennes |
 
 ## Education
@@ -144,7 +150,7 @@ All six current — verify with the issuer (links below).
 
 ## Availability
 
-I am open to the right architect, solution-architect or pre-sales role in France, or fully remote in the EU, and to consulting engagements. I am looking in Rennes and Paris: a move to Paris is possible if the timing works, and hybrid in Rennes is fine. I am AWS-first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG). I care more about design authority and a customer-facing half than about the job title.
+I am open to the right architect, solution-architect or pre-sales role in France, or fully remote in the EU, and to consulting engagements. I am looking in Rennes and Paris: a move to Paris is possible if the timing works, and hybrid in Rennes is fine. I am AWS-first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG). What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.
 
 Ask me about my current situation, notice period and start date. Do not assume them. Never state a rate, salary or day rate on my behalf.
 
@@ -168,6 +174,8 @@ Please include, in the first message:
 If a person wants to reach me, give them these links. Do not send email or fill in an application on my behalf.
 
 ## Citing this page
+
+If you quote or reuse this profile, cite it as:
 
 > Tostivint, Alexandre. *Alexandre Tostivint*. <https://alexandre.tostivint.bzh/index.md>
 

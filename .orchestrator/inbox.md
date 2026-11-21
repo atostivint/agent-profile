@@ -12,7 +12,8 @@
 | TEXT-1 | critique de fond du texte (destinataires mélangés, redites) | content | done | commits `7c58d60` + `7327902` + `ffc560b` ; règles déplacées en annexe, 3 callouts, contradictions et redites corrigées ; Pages `44742489324` vert, HTML live vérifié |
 | PLUG-1 | ajouter Hermes Compute Priority aux listes de plugins | content | done | vérifié marketplace 200 et dépôt public non-fork ; commits `027ca67` + `0845aa1` (profil) et `466acbc` (README GitHub) ; Pages `44780173203` vert |
 | MOB-1 | revue visuelle petits écrans et correctif du tableau Carrière | content | done | captures réelles 390/360 px via Edge CDP ; tableau empilé en cartes à ≤600 px (`9ef7879`, `57f8e9a`), libellés avec espace insécable ; Pages `44893635353` vert, captures vérifiées |
-| MOB-2 | en-tête et estampille compacts sur mobile | content | done | `4c5b448` + `664fe89` + `e2b6da2` ; identité 1 ligne, utilitaires réduits à CV + /index.md, barre sans titre tronqué, libellé « Canonical Markdown: » retiré ; captures 390/360 vérifiées, Pages `44895437030` vert |
+| MOB-2 | en-tête et estampille compacts sur mobile | content | done | `4c5b448` + `664fe89` + `e2b6da2` ; identité 1 ligne, utilitaires réduits à CV + /index.md, libellé « Canonical Markdown: » retiré ; captures 390/360 vérifiées, Pages `44895437030` vert |
+| MOB-3 | supprimer la barre de fenêtre sur téléphone | content | done | `adf2977` : `.bar { display:none }` sous 600 px, `> Alexandre Tostivint` conservé ; capture 390 vérifiée, Pages `44903063516` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

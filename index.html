@@ -180,6 +180,17 @@
     h1::before { content: "\276F "; }
     h1 { font-size: 1.3rem; }
   }
+  @media (max-width: 600px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
+    tr:last-child { border-bottom: 0; }
+    td { border: 0; padding: 2px 0; }
+    td::before { color: var(--dim); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td:nth-child(1)::before { content: "Years \00b7 "; }
+    td:nth-child(2)::before { content: "Role \00b7 "; }
+    td:nth-child(3)::before { content: "Organization \00b7 "; }
+  }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
   @media print {
     .rail, .bar { display: none; }

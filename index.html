@@ -175,9 +175,18 @@
     .win .body { padding: 22px 18px 26px; }
     h1 { font-size: 1.4rem; }
     body { font-size: 16px; }
+    .rail { padding: 8px 12px; gap: 4px 12px; }
+    .rail .id .rl { display: none; }
+    .rail .util a:not(:first-child) { display: none; }
+    .rail .mdlink { margin-top: 0; }
+    .rail nav a { min-height: 40px; }
+    main { padding: 0 10px; }
+    .win { margin: 10px auto 20px; }
+    .win .body { padding: 18px 16px 24px; }
+    h1 + blockquote + p { font-size: 11px; line-height: 1.5; margin: -.2rem 0 1rem; }
   }
   @media (max-width: 430px) {
-    h1::before { content: "\276F "; }
+    h1::before { content: "\276F\00a0"; }
     h1 { font-size: 1.3rem; }
   }
   @media (max-width: 600px) {
@@ -190,6 +199,8 @@
     td:nth-child(1)::before { content: "Years \00b7\00a0"; }
     td:nth-child(2)::before { content: "Role \00b7\00a0"; }
     td:nth-child(3)::before { content: "Organization \00b7\00a0"; }
+    .bar { padding: 8px 12px; }
+    .bar .title { display: none; }
   }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
   @media print {

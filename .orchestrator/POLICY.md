@@ -12,7 +12,7 @@ Un profil pour agent, c'est un fichier texte. Cette politique tient en une page 
 - `index.md` est la source de vérité. `AGENTS.md` en est la copie pour les agents locaux ; `index.html` est la page statique lisible rendue depuis `index.md`. Les trois forment une unité atomique : une seule tâche active, `index.md` = `AGENTS.md` octet pour octet, et `index.html` reflète le même contenu. Pas de build versionné : la resynchronisation est manuelle ou confiée à l'agent Hermes de l'utilisateur.
 - `/` sert le HTML aux humains (Safari, mobile) ; `/index.md` reste le Markdown brut pour les agents, annoncé par `<link rel="alternate" type="text/markdown">`.
 - Aucune expérience inventée. Le CV privé `../curriculum-vitae` fait autorité ; le vérifier à la main puisqu'il n'y a plus de porte automatique.
-- `https://alexandre.tostivint.bzh/` est un **blog**, pas un CV ni un portfolio : le nommer « Blog ». Le CV public reste `https://cv.alexandre.tostivint.bzh/resume.pdf`. `alexandre.osyvan.bzh` ne résout pas.
+- `https://alexandre.tostivint.bzh/` est le **domaine public du profil** (CNAME vérifié, canonical dans `index.html`), pas un blog : l'ancien blog reste chez Hashnode à `https://hashnode.com/@atostivint`. Le CV public reste `https://cv.alexandre.tostivint.bzh/resume.pdf`. `alexandre.osyvan.bzh` ne résout pas.
 - Chiffres avec leur période : « 300+ environnements clients » = base DoiT 2020–2025. Pas de tarif, salaire, TJM, téléphone ni date de disponibilité : « sur demande ». AWS est le cloud principal. Ne pas contacter la personne.
 
 ## Contrat de preuve

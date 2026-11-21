@@ -7,7 +7,7 @@ My goal is to align business needs and constraints with the right technology, an
 I'm looking for my next senior architect role: building the technologies of tomorrow that I already master today, DevOps, agentic systems (MCP, RAG) and AI-assisted development. What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-21 · Commit: 664fe89 · <https://alexandre.tostivint.bzh/index.md>*
+*Last updated: 2026-11-21 · Commit: a424066 · <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 ## About me

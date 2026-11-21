@@ -11,6 +11,7 @@
 | CONTENT-2 | aplatir index.md, ajouter faits CV et positionnement agentique, date + commit | content | done | commits `f8b27bd` + `2d10188` ; HTML régénéré, Pages `44721181574` vert, rendu vérifié via navigateur |
 | TEXT-1 | critique de fond du texte (destinataires mélangés, redites) | content | done | commits `7c58d60` + `7327902` + `ffc560b` ; règles déplacées en annexe, 3 callouts, contradictions et redites corrigées ; Pages `44742489324` vert, HTML live vérifié |
 | PLUG-1 | ajouter Hermes Compute Priority aux listes de plugins | content | done | vérifié marketplace 200 et dépôt public non-fork ; commits `027ca67` + `0845aa1` (profil) et `466acbc` (README GitHub) ; Pages `44780173203` vert |
+| MOB-1 | revue visuelle petits écrans et correctif du tableau Carrière | content | done | captures réelles 390/360 px via Edge CDP ; tableau empilé en cartes à ≤600 px (`9ef7879`, `57f8e9a`), libellés avec espace insécable ; Pages `44893635353` vert, captures vérifiées |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

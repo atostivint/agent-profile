@@ -16,6 +16,7 @@
 | MOB-3 | supprimer la barre de fenêtre sur téléphone | content | done | `adf2977` : `.bar { display:none }` sous 600 px, `> Alexandre Tostivint` conservé ; capture 390 vérifiée, Pages `44903063516` vert |
 | BIL-1 | refonte bilingue et restructuration selon les commentaires | content | done | plan Mistral Large 4 ; commits `a424066` + `457169b`, Pages `44934784531` vert ; FR/EN, logos, mois, ordre des sections, ancres et scroll-spy vérifiés en navigateur |
 | DOC-1 | gouvernance bilingue et dossier img/ | agent-docs | done | `content.md`, `README.md`, `decisions.md` mis à jour |
+| HIER-1 | hiérarchie humain d'abord | content | done | `dd06fbe` : ordre About → Selected work → Open source → Skills → Certs → Career → Education → Where I fit → Availability → Contact → Citing → Annexe ; index.md/AGENTS.md/html alignés, ancres préservées, annexe repliée en `<details>` ; Pages `44938887722` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

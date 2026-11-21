@@ -10,7 +10,8 @@ authoritative file is [`index.md`](index.md); everything else here is support.
 | ---- | ---- |
 | `index.md` | Single source of truth — the agent-facing profile. Edit this one. |
 | `AGENTS.md` | Local copy of `index.md`. Resynchronise by hand when the source changes. |
-| `index.html` | Static rendered page for humans, from `index.md`. No build; regenerate by hand. |
+| `index.html` | Static bilingual page for humans. English layer rendered from `index.md`, French layer translated by hand; no build. |
+| `img/` | AWS and Azure logos copied from the CV repository, served locally. |
 | `.nojekyll` | Tells GitHub Pages to serve `index.md` raw as `text/markdown`. |
 | `README.md` | This file. |
 
@@ -29,6 +30,7 @@ Before and after each edit:
 2. Re-read every fact in `index.md` against the CV at
    <https://cv.alexandre.tostivint.bzh/resume.pdf>.
 3. Check that the links still resolve.
+4. Check both language layers of `index.html`: the FR/EN switch, every section anchor, and the six certification logos in each layer.
 
 ## Rules the profile carries
 

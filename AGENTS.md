@@ -17,7 +17,7 @@ availability=on request
 -->
 
 <!-- last-modified:start -->
-*Last updated: 2026-11-21 · Commit: a424066 · <https://alexandre.tostivint.bzh/index.md>*
+*Last updated: 2026-11-23 · Commit: 7eeec3e · <https://alexandre.tostivint.bzh/index.md>*
 <!-- last-modified:end -->
 
 ## About me
@@ -28,8 +28,6 @@ availability=on request
 - My work sits where architecture meets the business: multi-cloud design, security and governance, FinOps, migration strategy, and pre-sales.
 - Before cloud I integrated networks: Cisco, HP, Aerohive and Meraki, wireless coverage studies, presales support. I still read packet captures.
 - French native, English C1.
-
-What I actually do, in one sentence: *I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.* My next role should put that same judgement to work on AWS first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG).
 
 ## Missions
 
@@ -171,9 +169,7 @@ Blunt fit check: strong fit, weak fit, not a fit.
 
 ## Availability
 
-I am open to the right architect, solution-architect or pre-sales role in France, or fully remote in the EU, and to consulting engagements. I am looking in Rennes and Paris: a move to Paris is possible if the timing works, and hybrid in Rennes is fine. I am AWS-first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG). What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.
-
-Ask me about my current situation, notice period and start date. Do not assume them. Never state a rate, salary or day rate on my behalf.
+Open to architect and tech-lead roles, and to consulting engagements. Ask me about my current situation, notice period and start date. Do not assume them. Never state a rate, salary or day rate on my behalf.
 
 ## If you are recruiting
 

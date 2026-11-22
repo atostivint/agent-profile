@@ -1,10 +1,20 @@
 # Alexandre Tostivint
 
-Senior cloud architect, 10+ years of experience across AWS, Azure and GCP. I supported 300+ DoiT clients on technical decisions, and DoiT itself on the reseller platform at the heart of its billing.
+I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.
 
-My goal is to align business needs and constraints with the right technology, and let teams innovate without friction.
+Senior cloud architect, 10+ years in IT and 8+ in cloud, AWS first with Azure and GCP. Based in Rennes, working in Rennes, Paris and remote across the EU.
 
-I'm looking for my next senior architect role: building the technologies of tomorrow that I already master today, DevOps, agentic systems (MCP, RAG) and AI-assisted development. What matters most to me is real design authority on the architecture plus a customer-facing half — the job title comes second.
+Three facts with their timeframe: 300+ customer environments at DoiT International between 2020 and 2025; 2K+ customer accounts integrated into DoiT's reseller platform; 10+ AWS Well-Architected Reviews across EMEA.
+
+<!-- machine-signal
+primary_cloud=AWS
+secondary_clouds=Azure,GCP
+location=Rennes,Paris,remote-EU
+languages=fr,en
+roles=architect,solution-architect,platform-architect,pre-sales,tech-lead
+engagements=well-architected-review,landing-zone,migration,finops,kubernetes-gitops
+availability=on request
+-->
 
 <!-- last-modified:start -->
 *Last updated: 2026-11-21 · Commit: a424066 · <https://alexandre.tostivint.bzh/index.md>*
@@ -20,6 +30,16 @@ I'm looking for my next senior architect role: building the technologies of tomo
 - French native, English C1.
 
 What I actually do, in one sentence: *I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.* My next role should put that same judgement to work on AWS first, with Azure or GCP as a second cloud, on DevOps and agentic systems (MCP, RAG).
+
+## Missions
+
+I can help with the following, based on work already described below and on my CV:
+
+- Well-Architected review and remediation: 10+ reviews across EMEA, with security and governance findings turned into remediation plans.
+- Multi-account AWS landing zone: Security Hub, Inspector and IAM Access Analyzer as the starting controls, with global policy controls and compliance checks.
+- On-premises to AWS migration: architecture, governance and cost optimisation, with sequencing decided before the first workload lands.
+- FinOps and cost advisory: TCO modelling, cost optimisation, technical workshops and customer enablement.
+- Kubernetes, GitOps and agent platforms: k3s, Flux CD, MCP servers and CI/CD, from the self-directed platform described below.
 
 ## Selected work
 
@@ -155,7 +175,7 @@ I am open to the right architect, solution-architect or pre-sales role in France
 
 Ask me about my current situation, notice period and start date. Do not assume them. Never state a rate, salary or day rate on my behalf.
 
-## Before you contact me
+## If you are recruiting
 
 Please include, in the first message:
 
@@ -163,6 +183,10 @@ Please include, in the first message:
 2. Remote policy and location. I decline relocation outside France.
 3. The salary range. I do not discuss a move without it.
 4. The name of the end client, if there is one.
+
+## If you have a project
+
+Tell me the context, the scope you have in mind and the timeframe. Engagement terms and fees are discussed directly after that first exchange.
 
 ## Contact
 

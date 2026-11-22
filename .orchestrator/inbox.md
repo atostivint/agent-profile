@@ -18,6 +18,7 @@
 | DOC-1 | gouvernance bilingue et dossier img/ | agent-docs | done | `content.md`, `README.md`, `decisions.md` mis à jour |
 | HIER-1 | hiérarchie humain d'abord | content | done | `dd06fbe` : ordre About → Selected work → Open source → Skills → Certs → Career → Education → Where I fit → Availability → Contact → Citing → Annexe ; index.md/AGENTS.md/html alignés, ancres préservées, annexe repliée en `<details>` ; Pages `44938887722` vert |
 | MISS-1 | hook missions, signal machine, CTA dual | content | done | revue Mistral/DeepSeek/GLM ; `7eeec3e` : phrase de valeur + 3 preuves datées, section Missions (5 offres issues de faits existants), `primary_cloud=AWS` en commentaire + JSON-LD Person, CTA recruteur/projet ; 2 couches FR/EN vérifiées en navigateur, Pages `45081492064` vert |
+| FIX-1 | corrections de la revue Mistral | content | done | `ae660f3` : estampille 2026-11-23 / `7eeec3e` (dernier commit de contenu), meta description conforme à la source, redites supprimées, lien Agent rules ouvrant le `<details>` ; vérifié en navigateur, Pages `45082540184` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

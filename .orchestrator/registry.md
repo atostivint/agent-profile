@@ -4,7 +4,7 @@ Deux domaines. `session` est le `sessionID` rendu par l'outil subagent : le repa
 
 | domain | session | last item | files in play | status |
 |---|---|---|---|---|
-| content | ses_e153cba00ffeEuQvQEeuQkGQS1 | PROFILE-1 alignement CV/README | `index.md`, `AGENTS.md`, `README.md`, `index.html`, `.nojekyll` | done |
+| content | ses_de2746c98ffex4N4QclVVTm7UB | HOME-1 accueil : largeur, liens, handshake | `index.md`, `AGENTS.md`, `index.html` | done |
 | agent-docs | ses_e1966539affeAMf700bj0rCssA | SIMP-1 simplification du dépôt | `.orchestrator/**`, `.opencode/domains/**` | done |
 
 ## Historique des sessions
@@ -14,6 +14,8 @@ Deux domaines. `session` est le `sessionID` rendu par l'outil subagent : le repa
 - `ses_e19768117ffe0HPWIIw2SwSPaU` — reviewer, lecture seule, réutilisable.
 - `ses_e196c61d3ffe2fLevsmIcMwHzp` — CI-1, workflow supprimé depuis. Morte.
 - `ses_e1966539affeAMf700bj0rCssA` — SIMP-1, retrait de la mécanique.
+- `ses_de2746c98ffex4N4QclVVTm7UB` — HOME-1, accueil pleine largeur, pastilles, handshake. Réutilisable pour `content`.
+- `ses_de26f9f1fffeJ7zTgEDuH8DiQm` — reviewer, lecture seule, réutilisable.
 
 ## Règles
 

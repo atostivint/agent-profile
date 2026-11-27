@@ -21,4 +21,6 @@
 | FIX-1 | corrections de la revue Mistral | content | done | `ae660f3` : estampille 2026-11-23 / `7eeec3e` (dernier commit de contenu), meta description conforme à la source, redites supprimées, lien Agent rules ouvrant le `<details>` ; vérifié en navigateur, Pages `45082540184` vert |
 | PROFILE-1 | aligner le profil sur le CV (15/11) et le README GitHub ; nuance management ; projets ouverts ; lien CV | content | done | Skills rafraîchies, 5 projets nommés, estampille 2026-11-17, `index.md` = `AGENTS.md`, 20 liens vérifiés / 0 failing |
 
+| HOME-1 | accueil : supprimer le vide à droite, rangée de liens humains, mots-clés humain/agent | content | done | `55a0636` ; `.win` pleine largeur, 5 pastilles par couche, `packet-capture` (humain) / `machine-signal` (agent) ; Pages `46025352134` vert, live vérifié (5+5 liens, `role=group`, estampille `ae660f3`, aucun débordement) | |
+
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

@@ -1,10 +1,10 @@
 # Alexandre Tostivint
 
-I turn a vague cloud ambition into an architecture a team can build, afford and defend in an audit.
+Senior cloud architect, 10+ years of experience across AWS, Azure and GCP. I supported 300+ customer environments at DoiT International between 2020 and 2025 on technical decisions, and DoiT itself on the reseller platform at the heart of its billing.
 
-Senior cloud architect, 10+ years in IT and 8+ in cloud, AWS first with Azure and GCP. Based in Rennes, working in Rennes, Paris and remote across the EU.
+My goal is to align business needs and constraints with the right technology, and let teams innovate without friction.
 
-Three facts with their timeframe: 300+ customer environments at DoiT International between 2020 and 2025; 2K+ customer accounts integrated into DoiT's reseller platform; 10+ AWS Well-Architected Reviews across EMEA.
+I am looking for my next senior architect role: building the technologies of tomorrow I already master today, DevOps, agentic systems (MCP, RAG) and AI-assisted development. Based in Rennes, open to hybrid or remote work in Rennes and Paris.
 
 <!-- machine-signal
 primary_cloud=AWS

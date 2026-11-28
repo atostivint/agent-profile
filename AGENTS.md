@@ -94,11 +94,13 @@ Contributed within a 4-person team to an AWS Landing Zone for a multinational cl
 Open-source work from that setup:
 
 - [bc250-gateway](https://github.com/atostivint/bc250-gateway): an OpenAI gateway that wakes a machine on demand and shuts it down when idle (Python, FastAPI, Kubernetes, wake-on-LAN).
+- [memedl](https://github.com/atostivint/memedl): downloads media from a shared X or Instagram link to a NAS share (Python).
 - [Hermes Adaptive Effort](https://hermes-agent.nousresearch.com/marketplace/hermes-adaptive-effort): a separate scorer picks the reasoning effort for each request. [Code](https://github.com/atostivint/hermes-adaptive-effort).
 - [Hermes Vitals Light](https://hermes-agent.nousresearch.com/marketplace/hermes-vitals-light): server health in the Hermes Desktop status bar. [Code](https://github.com/atostivint/hermes-vitals-light).
 - [whoami](https://hermes-agent.nousresearch.com/marketplace/whoami): shows which profile the next session will use. [Code](https://github.com/atostivint/hermes-whoami).
 - [Hermes Compute Priority](https://hermes-agent.nousresearch.com/marketplace/hermes-compute-priority): keeps the Desktop connection ahead of isolated turn workers on CPU-constrained hosts. [Code](https://github.com/atostivint/hermes-compute-priority).
 - [Hermes Hindsight Plus](https://github.com/atostivint/hermes-hindsight-plus): experimental, injects Hindsight mental models into the first turn. Not release-ready, no marketplace listing.
+- [tronic-printer-app](https://github.com/atostivint/tronic-printer-app): a Windows app that prints text, images, QR codes and receipts on the Lidl Tronic / Silvercrest pocket printer over Bluetooth LE (Rust, Rune, MCP server included).
 
 ## Skills
 

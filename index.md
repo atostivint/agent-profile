@@ -95,6 +95,7 @@ Open-source work from that setup:
 
 - [bc250-gateway](https://github.com/atostivint/bc250-gateway): an OpenAI gateway that wakes a machine on demand and shuts it down when idle (Python, FastAPI, Kubernetes, wake-on-LAN).
 - [memedl](https://github.com/atostivint/memedl): downloads media from a shared X or Instagram link to a NAS share (Python).
+- [ha-carel-pcoweb](https://github.com/atostivint/ha-carel-pcoweb): a read-only Home Assistant integration for a Dimplex heat pump on a Carel pCOWeb controller, installable through HACS (Python).
 - [Hermes Adaptive Effort](https://hermes-agent.nousresearch.com/marketplace/hermes-adaptive-effort): a separate scorer picks the reasoning effort for each request. [Code](https://github.com/atostivint/hermes-adaptive-effort).
 - [Hermes Vitals Light](https://hermes-agent.nousresearch.com/marketplace/hermes-vitals-light): server health in the Hermes Desktop status bar. [Code](https://github.com/atostivint/hermes-vitals-light).
 - [whoami](https://hermes-agent.nousresearch.com/marketplace/whoami): shows which profile the next session will use. [Code](https://github.com/atostivint/hermes-whoami).

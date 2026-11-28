@@ -26,4 +26,12 @@
 | PROJ-1 | cartes projets GitHub à la place du lien GitHub dans les pastilles | content | done | statiques, tirées de `index.md` ; 8 dépôts (les 6 + `tronic-printer-app` + `memedl`) ; `591c71b` + `e064f1b` ; bande scroll-snap, 4 badges Marketplace par couche, GitHub retiré des pastilles, impression en retour à la ligne ; Pages `46128693422` et `46129086609` verts, live vérifié | |
 | STYLE-1 | retirer les marques d'écriture automatique (tirets cadratins, points de suspension, guillemets typographiques) | content | done | `dc0ecd6` ; 0 occurrence dans les trois fichiers (comptage), faits et jetons intacts, index.md = AGENTS.md | |
 
+| PROJ-2 | cartes projets en grille au lieu de la bande à défilement | content | done | `8e4f49b` ; grille `auto-fill minmax(14rem,1fr)`, 2 colonnes sous 600 px, vérifié 756/390/360, Pages `46131702807` vert | |
+| PROJ-3 | ajouter l'intégration Home Assistant (HACS) aux cartes et à `index.md` | content | done | `ha-carel-pcoweb`, Python + badge HACS, 9 cartes par couche, `8e4f49b`, live vérifié | |
+| PROJ-4 | grille des projets repliable derrière un libellé | content | done | `<details>` natif fermé, `Projects (9)` / `Projets (9)`, ouverture clavier et impression vérifiées, publié dans `75d9029` | |
+| ICON-1 | vignette locale par carte + correctifs de revue | content | done | 9 PNG 64×64 dans `img/projects/` (28 Ko), retrait du padding mobile, guillemets français supprimés, commentaire mis à jour ; `75d9029`, Pages `46132811205` vert, 9 images chargées en live | |
+
+| ICON-2 | dessiner les icônes manquantes avec un modèle plus fort ; meme plus débile ; réutiliser les icônes existantes | content | done | A/B Gemini 4 Argon vs GPT-6 Luna, Gemini retenu ; `memedl` = visage débile A ; tronic/vitals/whoami conservés tels quels | |
+| ICON-3 | publier les icônes dans les dépôts respectifs et dans le profil | content | done | 5 `docs/icon.svg` publiés (bc250, memedl, ha-carel, compute-priority, hindsight-plus) ; adaptive-effort avait déjà son icône dans `plugin-card@2x.png`, vectorisée sans PR ; `6d66974` + `be18cc3`, Pages `46146804523` vert, 9 assets en direct 200 | |
+
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

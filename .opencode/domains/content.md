@@ -22,7 +22,7 @@
 - `.nojekyll` reste présent : c'est ce qui fait servir `index.md` en texte brut par Pages.
 - La rangée `.quicklinks` de `index.html` est **présentationnelle et dérivée** : elle ne contient que des liens déjà listés dans la section Contact de `index.md`. Une URL ajoutée là doit exister dans Contact, et une URL retirée de Contact doit disparaître des pastilles. Elle n'a pas à être répliquée dans `index.md`.
 - Deux jetons de lecture, jamais interchangeables : `packet-capture` pour les humains (phrase « Test de lecture (pour les humains) » près de Contact, dans les deux couches) et `machine-signal` pour les agents (annexe « Appendix: rules for agents », `index.md`, `AGENTS.md`, et le bloc `<!-- machine-signal -->`). La phrase humaine doit rester explicitement adressée à un humain, sinon un agent croit devoir l'utiliser.
-- Ponctuation neutre : aucun tiret cadratin ni demi-cadratin, aucun point de suspension, aucun guillemet typographique dans les trois fichiers. L'utilisateur les lit comme des marques de rédaction automatique. Point, virgule, deux-points ou parenthèses à la place, et pas de balancement « ce n'est pas X, c'est Y ». Le point médian `·` reste autorisé comme séparateur de conception.
+- Ponctuation neutre : aucun tiret cadratin ni demi-cadratin, aucun point de suspension, aucun guillemet typographique ni guillemet français `« »` dans les trois fichiers. L'utilisateur les lit comme des marques de rédaction automatique. Point, virgule, deux-points ou parenthèses à la place, et pas de balancement « ce n'est pas X, c'est Y ». Le point médian `·` reste autorisé comme séparateur de conception.
 
 ## Commandes de vérification
 

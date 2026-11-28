@@ -4,7 +4,7 @@ Deux domaines. `session` est le `sessionID` rendu par l'outil subagent : le repa
 
 | domain | session | last item | files in play | status |
 |---|---|---|---|---|
-| content | ses_de2746c98ffex4N4QclVVTm7UB | PROJ-1 cartes projets + STYLE-1 ponctuation | `index.md`, `AGENTS.md`, `index.html` | done |
+| content | ses_de2746c98ffex4N4QclVVTm7UB | ICON-1 vignettes locales + repli des projets | `index.md`, `AGENTS.md`, `index.html`, `img/projects/*.png` | done |
 | agent-docs | ses_e1966539affeAMf700bj0rCssA | SIMP-1 simplification du dépôt | `.orchestrator/**`, `.opencode/domains/**` | done |
 
 ## Historique des sessions

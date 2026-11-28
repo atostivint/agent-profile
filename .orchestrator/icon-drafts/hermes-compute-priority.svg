@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Hermes Compute Priority">
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <g fill="#374151" stroke="#4B5563" stroke-width="1.5">
+    <rect x="10" y="38" width="11" height="10" rx="2.5"/>
+    <rect x="25" y="38" width="11" height="10" rx="2.5"/>
+    <rect x="40" y="38" width="11" height="10" rx="2.5"/>
+  </g>
+  <rect x="10" y="18" width="11" height="10" rx="2.5" fill="#F9FAFB"/>
+  <rect x="25" y="18" width="11" height="10" rx="2.5" fill="#7EE787"/>
+  <path d="M38 23 H53" stroke="#7EE787" stroke-width="5" stroke-linecap="round"/>
+  <path d="M46 16 L54 23 L46 30" fill="none" stroke="#7EE787" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

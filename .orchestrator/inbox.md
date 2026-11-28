@@ -23,4 +23,7 @@
 
 | HOME-1 | accueil : supprimer le vide à droite, rangée de liens humains, mots-clés humain/agent | content | done | `55a0636` ; `.win` pleine largeur, 5 pastilles par couche, `packet-capture` (humain) / `machine-signal` (agent) ; Pages `46025352134` vert, live vérifié (5+5 liens, `role=group`, estampille `ae660f3`, aucun débordement) | |
 
+| PROJ-1 | cartes projets GitHub à la place du lien GitHub dans les pastilles | content | done | statiques, tirées de `index.md` ; 8 dépôts (les 6 + `tronic-printer-app` + `memedl`) ; `591c71b` + `e064f1b` ; bande scroll-snap, 4 badges Marketplace par couche, GitHub retiré des pastilles, impression en retour à la ligne ; Pages `46128693422` et `46129086609` verts, live vérifié | |
+| STYLE-1 | retirer les marques d'écriture automatique (tirets cadratins, points de suspension, guillemets typographiques) | content | done | `dc0ecd6` ; 0 occurrence dans les trois fichiers (comptage), faits et jetons intacts, index.md = AGENTS.md | |
+
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

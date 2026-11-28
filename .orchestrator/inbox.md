@@ -35,5 +35,6 @@
 | ICON-3 | publier les icônes dans les dépôts respectifs et dans le profil | content | done | 5 `docs/icon.svg` publiés (bc250, memedl, ha-carel, compute-priority, hindsight-plus) ; adaptive-effort avait déjà son icône dans `plugin-card@2x.png`, vectorisée sans PR ; `6d66974` + `be18cc3`, Pages `46146804523` vert, 9 assets en direct 200 | |
 | ICON-4 | standardiser `docs/icon.svg` dans les 9 dépôts | content | done | PR #150 ouverte sur `hermes-adaptive-effort` (non mergée, 8 checks) ; commits directs tronic `e17abe7`, vitals `88967d2`, whoami `d6079b3` (PNG d'origine encapsulé) ; profil inchangé | |
 | WRAP-1 | mesure de lecture 80 caractères, fenêtre 52 rem centrée | content | done | `e7da458` ; blanc intérieur 119 px à 1370 px au lieu de 440, marges 98/98, `overflow-wrap: anywhere` corrige les URL à 360 px ; Pages `46151622487` vert, live vérifié | |
+| INTRO-1 | reprendre le résumé généraliste v4 du CV + texte justifié | content | done | `b0d9091` ; hook retiré, intro CV adaptée FR/EN sans disponibilité, `text-align: justify` sur p/li/blockquote ; Pages `46153110089` vert, live vérifié | |
 
 Statuts : `ready`, `blocked`, `in_progress`, `done`, `cancelled`. Les arbitrages sont dans `decisions.md`.

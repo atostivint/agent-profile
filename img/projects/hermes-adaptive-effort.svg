@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Hermes Adaptive Effort">
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <path d="M12 42 A20 20 0 0 1 21 24.5" fill="none" stroke="#7EE787" stroke-width="6" stroke-linecap="round"/>
+  <path d="M25.5 22.5 A20 20 0 0 1 38.5 22.5" fill="none" stroke="#F0B429" stroke-width="6" stroke-linecap="round"/>
+  <path d="M43 24.5 A20 20 0 0 1 52 42" fill="none" stroke="#4B5563" stroke-width="6" stroke-linecap="round"/>
+  <path d="M32 42 L41 25" stroke="#F9FAFB" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="32" cy="42" r="4.5" fill="#F9FAFB"/>
+  <circle cx="32" cy="42" r="2" fill="#111827"/>
+</svg>

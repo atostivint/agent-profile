@@ -45,7 +45,8 @@
     font: 400 15.5px/1.68 "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: -.004em;
   }
-  .win .body p, .win .body li, .win .body blockquote p { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.6; max-width: 62ch; }
+  .win .body p, .win .body li, .win .body blockquote p { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.6; max-width: 80ch; }
+  .win .body p, .win .body li { overflow-wrap: anywhere; }
   /* link-in-bio strip: four pills, never above a 44px touch target */
   .quicklinks { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
   .quicklinks a {
@@ -117,7 +118,7 @@
 
   main { min-width: 0; padding: 0 26px; }
   .win {
-    margin: 26px auto 40px;
+    max-width: 52rem; margin: 26px auto 40px;
     background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
     overflow: hidden; box-shadow: var(--shadow);
   }
